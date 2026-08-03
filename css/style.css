@@ -1,9 +1,9 @@
 /* ============================================================
-   DELTA FORCE CHEAT SITE — GLOBAL STYLESHEET
+   DELTA FORCE CHEAT SITE â€” GLOBAL STYLESHEET
    Design system, components, animations, responsive layout
    ============================================================ */
 
-/* ── SELF-HOSTED INTER FONT ────────────────────────────────── */
+/* â”€â”€ SELF-HOSTED INTER FONT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @font-face {
   font-family: 'Inter';
   src: url('/fonts/inter-400.woff2') format('woff2');
@@ -44,7 +44,7 @@
   font-display: swap;
 }
 
-/* ── CSS CUSTOM PROPERTIES ─────────────────────────────────── */
+/* â”€â”€ CSS CUSTOM PROPERTIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   --bg-main: #0B0914;
   --bg-card: #181425;
@@ -69,7 +69,7 @@
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* ── RESET & BASE ───────────────────────────────────────────── */
+/* â”€â”€ RESET & BASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *,
 *::before,
 *::after {
@@ -96,7 +96,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── BODY BACKGROUND ATMOSPHERE ────────────────────────────── */
+/* â”€â”€ BODY BACKGROUND ATMOSPHERE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 body::before {
   content: '';
   position: fixed;
@@ -137,7 +137,7 @@ select {
   font-family: inherit;
 }
 
-/* ── LAYOUT UTILITIES ───────────────────────────────────────── */
+/* â”€â”€ LAYOUT UTILITIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -153,7 +153,7 @@ select {
   padding: 80px 0;
 }
 
-/* ── GRID UTILITIES ─────────────────────────────────────────── */
+/* â”€â”€ GRID UTILITIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -172,7 +172,7 @@ select {
   gap: 24px;
 }
 
-/* ── SECTION HEADING ────────────────────────────────────────── */
+/* â”€â”€ SECTION HEADING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .section-heading {
   text-align: center;
   max-width: 760px;
@@ -207,7 +207,7 @@ select {
   margin-inline: 0;
 }
 
-/* ── BUTTONS ────────────────────────────────────────────────── */
+/* â”€â”€ BUTTONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -281,7 +281,7 @@ select {
   font-size: 1.05rem;
 }
 
-/* ── TOP STRIP ──────────────────────────────────────────────── */
+/* â”€â”€ TOP STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .top-strip {
   background: linear-gradient(90deg, #581c87, var(--accent-primary), #7c3aed);
   background-size: 200% 100%;
@@ -313,7 +313,7 @@ select {
   }
 }
 
-/* ── NAVIGATION BAR ─────────────────────────────────────────── */
+/* â”€â”€ NAVIGATION BAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .navbar {
   position: sticky;
   top: 0;
@@ -411,7 +411,7 @@ select {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ── HERO SECTION ───────────────────────────────────────────── */
+/* â”€â”€ HERO SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .showcase-outer {
   padding: 48px 16px 64px;
 }
@@ -456,11 +456,13 @@ select {
       rgba(5, 3, 8, 0.96) 100%);
 }
 
-.hero-panel-content {
+.container.hero-panel-content {
   position: relative;
   z-index: 1;
   padding: 68px 56px 84px;
   max-width: 740px;
+  margin-inline: 0 auto;
+  text-align: left;
 }
 
 .hero-eyebrow {
@@ -567,7 +569,7 @@ select {
   align-self: center;
 }
 
-/* ── PREVIEW GALLERY ────────────────────────────────────────── */
+/* â”€â”€ PREVIEW GALLERY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #preview-images .section-heading {
   margin-bottom: 40px;
 }
@@ -613,7 +615,7 @@ select {
   letter-spacing: 0.05em;
 }
 
-/* ── CARD COMPONENT ─────────────────────────────────────────── */
+/* â”€â”€ CARD COMPONENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -647,12 +649,12 @@ select {
   line-height: 1.65;
 }
 
-/* ── WHY CHOOSE US ──────────────────────────────────────────── */
+/* â”€â”€ WHY CHOOSE US â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #why-choose-us .card {
   text-align: center;
 }
 
-/* ── TILT PRODUCT CARDS ─────────────────────────────────────── */
+/* â”€â”€ TILT PRODUCT CARDS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .tilt-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -722,7 +724,7 @@ select {
   gap: 10px;
 }
 
-/* ── GETTING STARTED ────────────────────────────────────────── */
+/* â”€â”€ GETTING STARTED â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #getting-started {
   text-align: center;
 }
@@ -799,7 +801,7 @@ select {
   text-transform: uppercase;
 }
 
-/* ── DISCORD SUPPORT CTA ────────────────────────────────────── */
+/* â”€â”€ DISCORD SUPPORT CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .support-cta-section {
   padding: 80px 0;
 }
@@ -859,7 +861,7 @@ select {
   flex-shrink: 0;
 }
 
-/* ── REVIEWS MARQUEE ────────────────────────────────────────── */
+/* â”€â”€ REVIEWS MARQUEE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .reviews-section {
   padding: 80px 0;
   overflow: hidden;
@@ -956,14 +958,14 @@ select {
   color: var(--text-muted);
 }
 
-/* ── LEARN MORE SECTION ─────────────────────────────────────── */
+/* â”€â”€ LEARN MORE SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .learn-more-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-/* ── FOOTER ─────────────────────────────────────────────────── */
+/* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .footer {
   border-top: 1px solid var(--border-color);
   padding: 56px 0 32px;
@@ -1037,7 +1039,7 @@ select {
   line-height: 1.5;
 }
 
-/* ── BUY PAGE — PAGE HEADER ─────────────────────────────────── */
+/* â”€â”€ BUY PAGE â€” PAGE HEADER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .page-header-section {
   padding: 60px 0 20px;
   text-align: center;
@@ -1073,7 +1075,7 @@ select {
   font-weight: 600;
 }
 
-/* ── BUY PAGE — PRICING ─────────────────────────────────────── */
+/* â”€â”€ BUY PAGE â€” PRICING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .showcase-panel--pricing {
   padding: 64px 56px;
   background: var(--panel-bg);
@@ -1256,7 +1258,7 @@ select {
 }
 
 .price-features-mini li::before {
-  content: '✓';
+  content: 'âœ“';
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -1274,7 +1276,7 @@ select {
   color: var(--accent-primary);
 }
 
-/* ── BUY PAGE — FEATURES ────────────────────────────────────── */
+/* â”€â”€ BUY PAGE â€” FEATURES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1334,7 +1336,7 @@ select {
   box-shadow: 0 0 6px rgba(168, 85, 247, 0.5);
 }
 
-/* ── FAQ ────────────────────────────────────────────────────── */
+/* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .faq {
   max-width: 820px;
   margin: 0 auto;
@@ -1385,7 +1387,7 @@ select {
 }
 
 .faq-item[open] summary::after {
-  content: '−';
+  content: 'âˆ’';
 }
 
 .faq-item summary:hover {
@@ -1399,7 +1401,7 @@ select {
   line-height: 1.75;
 }
 
-/* ── INTERNAL LINKS ─────────────────────────────────────────── */
+/* â”€â”€ INTERNAL LINKS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .internal-links-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1448,7 +1450,7 @@ select {
   transform: translateX(4px);
 }
 
-/* ── BLOG / GUIDE PLACEHOLDER ───────────────────────────────── */
+/* â”€â”€ BLOG / GUIDE PLACEHOLDER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .placeholder-section {
   min-height: 60vh;
   display: flex;
@@ -1480,7 +1482,101 @@ select {
   margin-bottom: 32px;
 }
 
-/* ── SYSTEM REQUIREMENTS BOX ────────────────────────────────── */
+/* â”€â”€ GUIDE ARTICLE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.guide-article-section {
+  padding-top: 12px;
+}
+
+.guide-article {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.guide-article > p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.guide-article > p strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.guide-article h2 {
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 2.75rem 0 1rem;
+  line-height: 1.25;
+}
+
+.guide-article h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 1.75rem 0 0.75rem;
+}
+
+.guide-article ul {
+  margin: 0 0 1.5rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.guide-article ul li {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  padding-left: 0.25rem;
+}
+
+.guide-article ul li strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.guide-summary-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin: 0.5rem 0 1.75rem;
+}
+
+.guide-summary-box ul {
+  margin: 0;
+  list-style: none;
+}
+
+.guide-summary-box ul li {
+  padding-left: 0;
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.guide-summary-box ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+}
+
+.guide-cta-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* â”€â”€ SYSTEM REQUIREMENTS BOX â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .sys-req-box {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -1523,7 +1619,7 @@ select {
   flex-shrink: 0;
 }
 
-/* ── MOBILE MENU ────────────────────────────────────────────── */
+/* â”€â”€ MOBILE MENU â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .mobile-nav {
   display: none;
   position: fixed;
@@ -1555,7 +1651,7 @@ select {
   color: var(--accent-primary);
 }
 
-/* ── SCROLL REVEAL ANIMATION ────────────────────────────────── */
+/* â”€â”€ SCROLL REVEAL ANIMATION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -1567,7 +1663,7 @@ select {
   transform: translateY(0);
 }
 
-/* ── TAG / KEYWORD BADGES ───────────────────────────────────── */
+/* â”€â”€ TAG / KEYWORD BADGES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .keyword-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1591,7 +1687,7 @@ select {
   color: #d8b4fe;
 }
 
-/* ── UTILITIES ──────────────────────────────────────────────── */
+/* â”€â”€ UTILITIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .text-accent {
   color: var(--accent-primary);
 }
@@ -1624,7 +1720,7 @@ select {
   margin-bottom: 0 !important;
 }
 
-/* ── VIDEO SECTION ──────────────────────────────────────────── */
+/* â”€â”€ VIDEO SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .video-showcase {
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -1639,9 +1735,9 @@ select {
   display: block;
 }
 
-/* ── RESPONSIVE DESIGN ──────────────────────────────────────── */
+/* â”€â”€ RESPONSIVE DESIGN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-/* ── Tablet ─────────────────────────────────────────────────── */
+/* â”€â”€ Tablet â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 1024px) {
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
@@ -1681,7 +1777,7 @@ select {
   }
 }
 
-/* ── Mobile ─────────────────────────────────────────────────── */
+/* â”€â”€ Mobile â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 768px) {
   .navbar-links {
     display: none;
@@ -1814,9 +1910,9 @@ select {
   }
 }
 
-/* ══════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    KINETIC VIDEO PLAYER
-   ══════════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .video-showcase {
   border-radius: 16px;
@@ -1843,7 +1939,7 @@ select {
   object-fit: cover;
 }
 
-/* ── Kinetic Overlay (Pre-Play Canvas) ───────────────────────── */
+/* â”€â”€ Kinetic Overlay (Pre-Play Canvas) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .kinetic-overlay {
   position: absolute;
   inset: 0;
@@ -1862,7 +1958,7 @@ select {
   pointer-events: none;
 }
 
-/* ── Glow Blooms ─────────────────────────────────────────────── */
+/* â”€â”€ Glow Blooms â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .kinetic-bloom {
   position: absolute;
   border-radius: 50%;
@@ -1888,7 +1984,7 @@ select {
   opacity: 0.4;
 }
 
-/* ── Title Lockup ────────────────────────────────────────────── */
+/* â”€â”€ Title Lockup â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .kinetic-title-lockup {
   position: relative;
   z-index: 2;
@@ -1923,7 +2019,7 @@ select {
     0 0 20px rgba(230, 221, 245, 0.4);
 }
 
-/* ── Scrim for controls ──────────────────────────────────────── */
+/* â”€â”€ Scrim for controls â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .kinetic-scrim {
   position: absolute;
   bottom: 0;
@@ -1942,7 +2038,7 @@ select {
   opacity: 1;
 }
 
-/* ── Controls Bar ────────────────────────────────────────────── */
+/* â”€â”€ Controls Bar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .kinetic-controls {
   position: absolute;
   bottom: 12px;
@@ -1970,7 +2066,7 @@ select {
   pointer-events: auto;
 }
 
-/* ── Control Groups ──────────────────────────────────────────── */
+/* â”€â”€ Control Groups â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .kctrl-left,
 .kctrl-right {
   display: flex;
@@ -1985,7 +2081,7 @@ select {
   align-items: center;
 }
 
-/* ── Generic button ──────────────────────────────────────────── */
+/* â”€â”€ Generic button â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .kbtn {
   background: none;
   border: none;
@@ -2012,7 +2108,7 @@ select {
   display: none !important;
 }
 
-/* ── Time display ────────────────────────────────────────────── */
+/* â”€â”€ Time display â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .k-time {
   font-size: 13px;
   font-weight: 500;
@@ -2021,7 +2117,7 @@ select {
   letter-spacing: 0.02em;
 }
 
-/* ── Progress scrubber ───────────────────────────────────────── */
+/* â”€â”€ Progress scrubber â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .k-progress-wrap {
   position: relative;
   width: 100%;
@@ -2067,7 +2163,7 @@ select {
   margin: 0;
 }
 
-/* ── Responsive ──────────────────────────────────────────────── */
+/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 600px) {
   .kinetic-controls {
     bottom: 8px;
