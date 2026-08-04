@@ -1,5 +1,7 @@
 /* ============================================================
-   Site-wide i18n — locales, data-i18n / data-i18n-html / attrs
+   Site-wide i18n
+   English = HTML source of truth (no fetch / no overwrite)
+   Other languages = fetch locale JSON and apply translations
    ============================================================ */
 
 'use strict';
@@ -29,6 +31,8 @@
   ];
 
   const cache = Object.create(null);
+  let englishCached = false;
+  let englishTitle = '';
 
   function getSavedLang() {
     try {
@@ -44,19 +48,73 @@
     } catch (_) { /* ignore */ }
   }
 
+  /** Snapshot current (English) DOM text once, before any translation. */
+  function cacheEnglishDefaults() {
+    if (englishCached) return;
+
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      el.setAttribute('data-i18n-default', el.textContent);
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      el.setAttribute('data-i18n-html-default', el.innerHTML);
+    });
+    document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
+      el.setAttribute('data-i18n-aria-default', el.getAttribute('aria-label') || '');
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
+      el.setAttribute('data-i18n-alt-default', el.getAttribute('alt') || '');
+    });
+    document.querySelectorAll('[data-i18n-title]').forEach((el) => {
+      el.setAttribute('data-i18n-title-default', el.getAttribute('title') || '');
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+      el.setAttribute('data-i18n-placeholder-default', el.getAttribute('placeholder') || '');
+    });
+
+    englishTitle = document.title;
+    englishCached = true;
+  }
+
+  /** Restore HTML English content — no network request. */
+  function restoreEnglish() {
+    document.querySelectorAll('[data-i18n-default]').forEach((el) => {
+      el.textContent = el.getAttribute('data-i18n-default') || '';
+    });
+    document.querySelectorAll('[data-i18n-html-default]').forEach((el) => {
+      el.innerHTML = el.getAttribute('data-i18n-html-default') || '';
+    });
+    document.querySelectorAll('[data-i18n-aria-default]').forEach((el) => {
+      const v = el.getAttribute('data-i18n-aria-default');
+      if (v) el.setAttribute('aria-label', v);
+      else el.removeAttribute('aria-label');
+    });
+    document.querySelectorAll('[data-i18n-alt-default]').forEach((el) => {
+      el.setAttribute('alt', el.getAttribute('data-i18n-alt-default') || '');
+    });
+    document.querySelectorAll('[data-i18n-title-default]').forEach((el) => {
+      const v = el.getAttribute('data-i18n-title-default');
+      if (v) el.setAttribute('title', v);
+      else el.removeAttribute('title');
+    });
+    document.querySelectorAll('[data-i18n-placeholder-default]').forEach((el) => {
+      el.setAttribute('placeholder', el.getAttribute('data-i18n-placeholder-default') || '');
+    });
+
+    if (englishTitle) document.title = englishTitle;
+  }
+
   async function fetchLocale(code) {
     if (cache[code]) return cache[code];
 
     try {
-      const res = await fetch(`/locales/${code}.json`, { cache: 'no-cache' });
+      const res = await fetch(`/locales/${code}.json`, { cache: 'force-cache' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       cache[code] = data;
       return data;
     } catch (err) {
-      console.warn(`[i18n] Failed to load ${code}.json — falling back to en`, err);
-      if (code !== DEFAULT_LANG) return fetchLocale(DEFAULT_LANG);
-      return cache.en || {};
+      console.warn(`[i18n] Failed to load ${code}.json`, err);
+      return null;
     }
   }
 
@@ -65,19 +123,16 @@
   }
 
   function applyTranslations(dict) {
-    // Plain text nodes
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const val = t(dict, el.getAttribute('data-i18n'));
       if (val != null) el.textContent = val;
     });
 
-    // Trusted HTML snippets (strong/em only — authored in locale files)
     document.querySelectorAll('[data-i18n-html]').forEach((el) => {
       const val = t(dict, el.getAttribute('data-i18n-html'));
       if (val != null) el.innerHTML = val;
     });
 
-    // Attributes: data-i18n-aria-label, data-i18n-alt, data-i18n-title, data-i18n-placeholder
     document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
       const val = t(dict, el.getAttribute('data-i18n-aria-label'));
       if (val != null) el.setAttribute('aria-label', val);
@@ -95,7 +150,6 @@
       if (val != null) el.setAttribute('placeholder', val);
     });
 
-    // Optional document title
     const pageTitleKey = document.documentElement.getAttribute('data-i18n-title-key');
     if (pageTitleKey) {
       const titleVal = t(dict, pageTitleKey);
@@ -123,11 +177,21 @@
 
   async function setLanguage(code) {
     const safe = SUPPORTED.some((l) => l.code === code) ? code : DEFAULT_LANG;
-    const dict = await fetchLocale(safe);
-    applyTranslations(dict);
+
     applyDocumentLang(safe);
     syncSwitcherUI(safe);
     saveLang(safe);
+
+    // English: keep HTML as-is — no JSON fetch, no DOM overwrite
+    if (safe === DEFAULT_LANG) {
+      if (englishCached) restoreEnglish();
+      return;
+    }
+
+    // Non-English: snapshot English once, then fetch + apply locale
+    cacheEnglishDefaults();
+    const dict = await fetchLocale(safe);
+    if (dict) applyTranslations(dict);
   }
 
   function closeDropdown(root) {
