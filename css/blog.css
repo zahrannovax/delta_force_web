@@ -24,22 +24,22 @@ body::after {
    CSS TOKENS (blog-scoped)
    ---------------------------------------------------------------- */
 :root {
-  --blog-bg-page:      #000000;
-  --blog-bg-card:      #181425;
-  --blog-accent:       #A855F7;
+  --blog-bg-page: #000000;
+  --blog-bg-card: #181425;
+  --blog-accent: #A855F7;
   --blog-accent-hover: #9333EA;
-  --blog-text:         #FFFFFF;
-  --blog-muted:        #A1A1AA;
-  --blog-dim:          #6b6874;
-  --blog-border:       rgba(168, 85, 247, 0.2);
-  --blog-yes:          #4ADE80;
-  --blog-no:           #F87171;
-  --blog-radius-md:    10px;
-  --blog-radius-lg:    18px;
-  --blog-radius-pill:  999px;
-  --blog-max-width:    1320px;
-  --blog-pad-x:        40px;
-  --blog-section-y:    72px;
+  --blog-text: #FFFFFF;
+  --blog-muted: #A1A1AA;
+  --blog-dim: #6b6874;
+  --blog-border: rgba(168, 85, 247, 0.2);
+  --blog-yes: #4ADE80;
+  --blog-no: #F87171;
+  --blog-radius-md: 10px;
+  --blog-radius-lg: 18px;
+  --blog-radius-pill: 999px;
+  --blog-max-width: 1320px;
+  --blog-pad-x: 40px;
+  --blog-section-y: 72px;
 }
 
 /* ----------------------------------------------------------------
@@ -285,7 +285,6 @@ body::after {
   line-height: 1.65;
   margin: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -661,6 +660,7 @@ body::after {
   .blog-card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .blog-related-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -672,6 +672,7 @@ body::after {
     text-align: left;
     margin-inline: 0;
   }
+
   .blog-filter-wrap {
     justify-content: flex-start;
   }
@@ -725,6 +726,7 @@ body::after {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   .blog-card,
   .blog-tab,
   .blog-back-link,
@@ -732,6 +734,7 @@ body::after {
   .blog-article-nav-card {
     transition: none;
   }
+
   .blog-card:hover {
     transform: none;
   }
