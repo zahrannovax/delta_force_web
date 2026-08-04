@@ -767,10 +767,36 @@ select {
   box-shadow: 0 16px 48px rgba(168, 85, 247, 0.15);
 }
 
-.card-icon {
-  font-size: 2rem;
+.card-icon,
+.ui-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  background: rgba(168, 85, 247, 0.08);
+  color: #C084FC;
   margin-bottom: 16px;
-  display: block;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.15);
+  flex-shrink: 0;
+}
+
+.card-icon svg,
+.ui-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#why-choose-us .card-icon {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card h3 {
@@ -828,7 +854,6 @@ select {
 }
 
 .tilt-card .card-icon {
-  font-size: 2.2rem;
   margin-bottom: 18px;
 }
 
@@ -894,18 +919,28 @@ select {
 }
 
 .step-icon-ring {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  border: 2px solid var(--accent-primary);
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  border: 1px solid rgba(168, 85, 247, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
   margin-bottom: 20px;
-  background: var(--bg-card);
-  box-shadow: 0 0 24px rgba(168, 85, 247, 0.25);
+  background: rgba(168, 85, 247, 0.08);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.15);
+  color: #C084FC;
   flex-shrink: 0;
+}
+
+.step-icon-ring svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .howto-step h3 {
@@ -1446,7 +1481,27 @@ select {
 }
 
 .feature-card h3 .feat-icon {
-  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  background: rgba(168, 85, 247, 0.08);
+  color: #C084FC;
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.12);
+  flex-shrink: 0;
+}
+
+.feature-card h3 .feat-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .feature-list {
