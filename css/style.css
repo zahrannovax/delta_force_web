@@ -891,6 +891,24 @@ select {
   text-align: center;
 }
 
+.getting-started-media {
+  margin: 0 auto 40px;
+  max-width: 900px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.getting-started-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .howto-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
