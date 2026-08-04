@@ -40,6 +40,8 @@
     "common.feat.cloudDma":  "CLOUD-DMA-optie",
     "common.feat.aws":  "AWS-optie",
     "common.feat.lifetimeExtra":  "Lifetime-toegang — eenmaal betalen, voor altijd houden",
+    "common.feat.includesMonthly":  "Bevat alles uit het Maandelijkse pakket",
+    "common.feat.allFutureUpdates":  "Bevat alle toekomstige updates",
     "common.sysReq.title":  "⚙️ Systeemvereisten",
     "common.sysReq.hvci":  "HVCI — AAN",
     "common.sysReq.coreIsolation":  "Core Isolation — AAN",

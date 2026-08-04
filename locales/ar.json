@@ -40,6 +40,8 @@
     "common.feat.cloudDma":  "خيار CLOUD-DMA",
     "common.feat.aws":  "خيار AWS",
     "common.feat.lifetimeExtra":  "وصول مدى الحياة — ادفع مرة واحدة واحتفظ به للأبد",
+    "common.feat.includesMonthly":  "يشمل كل ما في الباقة الشهرية",
+    "common.feat.allFutureUpdates":  "يشمل جميع التحديثات المستقبلية",
     "common.sysReq.title":  "⚙️ متطلبات النظام",
     "common.sysReq.hvci":  "HVCI — ON",
     "common.sysReq.coreIsolation":  "Core Isolation — ON",

@@ -40,6 +40,8 @@
     "common.feat.cloudDma":  "Opsi CLOUD-DMA",
     "common.feat.aws":  "Opsi AWS",
     "common.feat.lifetimeExtra":  "Akses lifetime — bayar sekali, simpan selamanya",
+    "common.feat.includesMonthly":  "Termasuk semua di paket Bulanan",
+    "common.feat.allFutureUpdates":  "Termasuk semua update mendatang",
     "common.sysReq.title":  "⚙️ Persyaratan Sistem",
     "common.sysReq.hvci":  "HVCI — ON",
     "common.sysReq.coreIsolation":  "Core Isolation — ON",

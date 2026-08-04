@@ -40,6 +40,8 @@
     "common.feat.cloudDma":  "CLOUD-DMA 选项",
     "common.feat.aws":  "AWS 选项",
     "common.feat.lifetimeExtra":  "终身访问 — 一次付费，永久保留",
+    "common.feat.includesMonthly":  "包含月度套餐的全部内容",
+    "common.feat.allFutureUpdates":  "包含所有未来更新",
     "common.sysReq.title":  "⚙️ 系统要求",
     "common.sysReq.hvci":  "HVCI — ON",
     "common.sysReq.coreIsolation":  "Core Isolation — ON",

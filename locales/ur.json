@@ -40,6 +40,8 @@
     "common.feat.cloudDma":  "CLOUD-DMA آپشن",
     "common.feat.aws":  "AWS آپشن",
     "common.feat.lifetimeExtra":  "لائف ٹائم رسائی — ایک بار ادائیگی، ہمیشہ کے لیے رکھیں",
+    "common.feat.includesMonthly":  "ماہانہ پیکیج کی سب کچھ شامل",
+    "common.feat.allFutureUpdates":  "تمام مستقبل کی اپڈیٹس شامل",
     "common.sysReq.title":  "⚙️ سسٹم کی ضروریات",
     "common.sysReq.hvci":  "HVCI — ON",
     "common.sysReq.coreIsolation":  "Core Isolation — ON",

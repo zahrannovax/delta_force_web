@@ -40,6 +40,8 @@
     "common.feat.cloudDma":  "Option CLOUD-DMA",
     "common.feat.aws":  "Option AWS",
     "common.feat.lifetimeExtra":  "Accès à vie — payez une fois, gardez pour toujours",
+    "common.feat.includesMonthly":  "Inclut tout le forfait Mensuel",
+    "common.feat.allFutureUpdates":  "Inclut toutes les mises à jour futures",
     "common.sysReq.title":  "⚙️ Configuration requise",
     "common.sysReq.hvci":  "HVCI — ACTIVÉ",
     "common.sysReq.coreIsolation":  "Core Isolation — ACTIVÉ",

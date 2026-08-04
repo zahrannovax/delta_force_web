@@ -1395,7 +1395,7 @@ select {
 }
 
 .price-features-mini li::before {
-  content: 'âœ“';
+  content: '\2713';
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -1406,6 +1406,8 @@ select {
   font-size: 0.65rem;
   font-weight: 800;
   flex-shrink: 0;
+  color: #fff;
+  line-height: 1;
 }
 
 .price-card--flat .price-features-mini li::before {

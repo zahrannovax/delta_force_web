@@ -40,6 +40,8 @@
     "common.feat.cloudDma":  "CLOUD-DMA विकल्प",
     "common.feat.aws":  "AWS विकल्प",
     "common.feat.lifetimeExtra":  "लाइफटाइम एक्सेस — एक बार भुगतान, हमेशा के लिए रखें",
+    "common.feat.includesMonthly":  "मासिक पैकेज की सभी सुविधाएँ शामिल",
+    "common.feat.allFutureUpdates":  "सभी भविष्य के अपडेट शामिल",
     "common.sysReq.title":  "⚙️ सिस्टम आवश्यकताएँ",
     "common.sysReq.hvci":  "HVCI — ON",
     "common.sysReq.coreIsolation":  "Core Isolation — ON",

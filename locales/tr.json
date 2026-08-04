@@ -40,6 +40,8 @@
     "common.feat.cloudDma":  "CLOUD-DMA seçeneği",
     "common.feat.aws":  "AWS seçeneği",
     "common.feat.lifetimeExtra":  "Ömür boyu erişim — bir kez öde, sonsuza kadar kullan",
+    "common.feat.includesMonthly":  "Aylık paketteki her şeyi içerir",
+    "common.feat.allFutureUpdates":  "Tüm gelecek güncellemeleri içerir",
     "common.sysReq.title":  "⚙️ Sistem Gereksinimleri",
     "common.sysReq.hvci":  "HVCI — AÇIK",
     "common.sysReq.coreIsolation":  "Core Isolation — AÇIK",

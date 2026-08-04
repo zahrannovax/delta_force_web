@@ -40,6 +40,8 @@
     "common.feat.cloudDma":  "Опция CLOUD-DMA",
     "common.feat.aws":  "Опция AWS",
     "common.feat.lifetimeExtra":  "Пожизненный доступ — платите один раз, пользуйтесь навсегда",
+    "common.feat.includesMonthly":  "Включает всё из месячного пакета",
+    "common.feat.allFutureUpdates":  "Включает все будущие обновления",
     "common.sysReq.title":  "⚙️ Системные требования",
     "common.sysReq.hvci":  "HVCI — ON",
     "common.sysReq.coreIsolation":  "Core Isolation — ON",
