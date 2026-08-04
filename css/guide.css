@@ -9,37 +9,10 @@
    ---------------------------------------------------------------- */
 .guide-section {
   position: relative;
-  padding: 72px 0 96px;
+  padding: 32px 0 96px;
 }
 
-/* ----------------------------------------------------------------
-   BREADCRUMBS
-   ---------------------------------------------------------------- */
-.guide-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
-  color: #A1A1AA;
-  flex-wrap: wrap;
-  padding-top: 24px;
-  margin-bottom: 48px;
-}
-
-.guide-breadcrumb a {
-  color: #A1A1AA;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.guide-breadcrumb a:hover {
-  color: #A855F7;
-}
-
-.guide-breadcrumb span[aria-current="page"] {
-  color: #FFFFFF;
-}
+/* Breadcrumbs now use shared .page-breadcrumb from style.css */
 
 /* ----------------------------------------------------------------
    ARTICLE HEADER — left-aligned editorial, max 750px
@@ -313,7 +286,7 @@
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .guide-breadcrumb a,
+  .page-breadcrumb a,
   .guide-prose a {
     transition: none;
   }
