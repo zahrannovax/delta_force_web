@@ -336,7 +336,9 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: clamp(12px, 2vw, 32px);
+  flex-wrap: nowrap;
+  min-width: 0;
 }
 
 .navbar-logo {
@@ -353,14 +355,19 @@ select {
   display: flex;
   align-items: center;
   gap: 4px;
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+  flex-wrap: wrap;
 }
 
 .navbar-links a {
-  padding: 8px 14px;
+  padding: 8px clamp(8px, 1.2vw, 14px);
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-muted);
+  white-space: nowrap;
   transition: color var(--transition-fast), background var(--transition-fast);
 }
 
@@ -374,8 +381,122 @@ select {
   color: var(--accent-primary);
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
 .navbar-cta {
   flex-shrink: 0;
+}
+
+.navbar-cta .btn {
+  white-space: nowrap;
+}
+
+/* Language switcher */
+.lang-switcher {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.lang-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 150px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.lang-trigger:hover,
+.lang-switcher.is-open .lang-trigger {
+  background: rgba(168, 85, 247, 0.12);
+  border-color: rgba(168, 85, 247, 0.35);
+}
+
+.lang-trigger #lang-current-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lang-trigger-chevron {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  opacity: 0.7;
+  transition: transform var(--transition-fast);
+}
+
+.lang-switcher.is-open .lang-trigger-chevron {
+  transform: rotate(180deg);
+}
+
+.lang-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  inset-inline-end: 0;
+  z-index: 120;
+  min-width: 180px;
+  max-height: min(70vh, 360px);
+  overflow-y: auto;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: rgba(18, 14, 32, 0.98);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+}
+
+.lang-switcher.is-open .lang-menu {
+  display: block;
+}
+
+.lang-option {
+  display: block;
+  width: 100%;
+  text-align: start;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.lang-option:hover {
+  background: rgba(168, 85, 247, 0.12);
+  color: var(--text-main);
+}
+
+.lang-option.is-active {
+  color: var(--accent-primary);
+  background: rgba(168, 85, 247, 0.15);
+}
+
+/* RTL nav tweaks */
+[dir="rtl"] .navbar-links {
+  direction: rtl;
+}
+
+[dir="rtl"] .lang-trigger,
+[dir="rtl"] .lang-option {
+  font-family: inherit;
 }
 
 .hamburger {
@@ -1785,6 +1906,12 @@ select {
 
   .navbar-cta .btn {
     display: none;
+  }
+
+  .lang-trigger {
+    max-width: 120px;
+    padding: 6px 8px;
+    font-size: 0.75rem;
   }
 
   .hamburger {

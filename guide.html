@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-title-key="guide.seo.title">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/css/style.css?v=8">
+  <link rel="stylesheet" href="/css/style.css?v=9">
   <link rel="stylesheet" href="/css/guide.css?v=1">
 
   <!-- Breadcrumb JSON-LD -->
@@ -109,211 +109,175 @@
 
   <!-- Lenis Smooth Scroll -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <!-- Early lang/dir to avoid RTL flash -->
+  <script>
+    (function () {
+      try {
+        var l = localStorage.getItem('df_lang') || 'en';
+        document.documentElement.lang = l;
+        document.documentElement.dir = (l === 'ar' || l === 'ur') ? 'rtl' : 'ltr';
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
 </head>
 <body>
 
   <!-- TOP STRIP -->
-  <div class="top-strip" role="banner" aria-label="Announcement">
-    Learn how Delta Force ACE anti-cheat works — then get tools built for it.
-    <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" target="_blank" rel="noopener noreferrer" id="guide-strip-link">Buy Now →</a>
+  <div class="top-strip" role="banner" aria-label="Announcement" data-i18n-aria-label="common.aria.announcement">
+    <span data-i18n="guide.strip.text">Learn how Delta Force ACE anti-cheat works — then get tools built for it.</span>
+    <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" target="_blank" rel="noopener noreferrer" id="guide-strip-link" data-i18n="common.strip.cta.buyNow">Buy Now →</a>
   </div>
 
   <!-- NAVBAR -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
+  <nav class="navbar" role="navigation" aria-label="Main navigation" data-i18n-aria-label="common.aria.mainNav">
     <div class="container navbar-inner">
-      <a class="navbar-logo" href="/index.html" aria-label="Home">
-        <img src="/assets/delta-force-logo.png" alt="Delta Force Cheats" width="120" height="32" fetchpriority="high">
+      <a class="navbar-logo" href="/index.html" aria-label="Home" data-i18n-aria-label="common.aria.home">
+        <img src="/assets/delta-force-logo.png" alt="Delta Force Cheats" width="120" height="32" fetchpriority="high" data-i18n-alt="common.alt.deltaLogo">
       </a>
       <div class="navbar-links" role="menubar">
-        <a href="/index.html" role="menuitem" id="guide-nav-home">Home</a>
-        <a href="/delta-force-cheats.html" role="menuitem" id="guide-nav-buy">Buy</a>
-        <a href="/blog.html" role="menuitem" id="guide-nav-blog">Blog</a>
-        <a href="/guide.html" role="menuitem" class="active" id="guide-nav-guide">Guide</a>
+        <a href="/index.html" role="menuitem" id="guide-nav-home" data-i18n="nav.home">Home</a>
+        <a href="/delta-force-cheats.html" role="menuitem" id="guide-nav-buy" data-i18n="nav.buy">Buy</a>
+        <a href="/blog.html" role="menuitem" id="guide-nav-blog" data-i18n="nav.blog">Blog</a>
+        <a href="/guide.html" role="menuitem" class="active" id="guide-nav-guide" data-i18n="nav.guide">Guide</a>
       </div>
-      <div class="navbar-cta">
-        <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank" rel="noopener noreferrer" id="guide-nav-cta">Buy Now</a>
+      <div class="navbar-actions">
+        <div class="lang-switcher" id="lang-switcher">
+          <button type="button" class="lang-trigger" id="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" data-i18n-aria-label="common.aria.selectLanguage">
+            <span id="lang-current-label">English</span>
+            <svg class="lang-trigger-chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="lang-menu" role="listbox" aria-label="Languages" data-i18n-aria-label="common.aria.languages">
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="en" aria-selected="true">English</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="tr" aria-selected="false">Türkçe</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ar" aria-selected="false">العربية</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="de" aria-selected="false">Deutsch</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="fr" aria-selected="false">Français</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="es" aria-selected="false">Español</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="pt" aria-selected="false">Português</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ru" aria-selected="false">Русский</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ja" aria-selected="false">日本語</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="zh" aria-selected="false">中文</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="hi" aria-selected="false">हिन्दी</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ur" aria-selected="false">اردو</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="id" aria-selected="false">Bahasa Indonesia</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="pl" aria-selected="false">Polski</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="nl" aria-selected="false">Nederlands</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="it" aria-selected="false">Italiano</button></li>
+          </ul>
+        </div>
+        <div class="navbar-cta">
+          <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank" rel="noopener noreferrer" id="guide-nav-cta" data-i18n="nav.cta">Buy Now</a>
+        </div>
+        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" id="guide-hamburger" data-i18n-aria-label="common.aria.toggleMenu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" id="guide-hamburger">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
   <!-- Mobile Nav Overlay -->
-  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation" id="guide-mobile-nav">
-    <a href="/index.html">Home</a>
-    <a href="/delta-force-cheats.html">Buy</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/guide.html">Guide</a>
-    <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank" rel="noopener noreferrer" id="guide-mobile-cta">Buy Now</a>
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation" id="guide-mobile-nav" data-i18n-aria-label="common.aria.mobileNav">
+    <a href="/index.html" data-i18n="nav.home">Home</a>
+    <a href="/delta-force-cheats.html" data-i18n="nav.buy">Buy</a>
+    <a href="/blog.html" data-i18n="nav.blog">Blog</a>
+    <a href="/guide.html" data-i18n="nav.guide">Guide</a>
+    <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank" rel="noopener noreferrer" id="guide-mobile-cta" data-i18n="nav.cta">Buy Now</a>
   </div>
 
   <main>
 
-    <section class="guide-section" aria-label="Delta Force anti-cheat guide">
+    <section class="guide-section" aria-label="Delta Force anti-cheat guide" data-i18n-aria-label="guide.aria">
       <div class="container">
 
         <!-- BREADCRUMBS -->
-        <nav class="guide-breadcrumb" aria-label="Breadcrumb navigation">
-          <a href="/index.html" id="guide-breadcrumb-home">Home</a>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page">Guide</span>
+        <nav class="guide-breadcrumb" aria-label="Breadcrumb navigation" data-i18n-aria-label="common.aria.breadcrumb">
+          <a href="/index.html" id="guide-breadcrumb-home" data-i18n="common.breadcrumb.home">Home</a>
+          <span aria-hidden="true" data-i18n="common.breadcrumb.sep">/</span>
+          <span aria-current="page" data-i18n="guide.breadcrumb.current">Guide</span>
         </nav>
 
         <!-- ARTICLE HEADER -->
         <div class="guide-article-header">
-          <p class="guide-eyebrow">Anti-Cheat Guide</p>
-          <h1>What Anti-Cheat Does Delta Force Use?</h1>
-          <p class="guide-lead">
-            A clear look at Delta Force anti cheat — what kind of system it uses, whether it is kernel-level,
-            how ACE works on PC, and what DMA Shield means for hardware cheats.
-          </p>
+          <p class="guide-eyebrow" data-i18n="guide.eyebrow">Anti-Cheat Guide</p>
+          <h1 data-i18n="guide.title">What Anti-Cheat Does Delta Force Use?</h1>
+          <p class="guide-lead" data-i18n="guide.lead">A clear look at Delta Force anti cheat — what kind of system it uses, whether it is kernel-level, how ACE works on PC, and what DMA Shield means for hardware cheats.</p>
         </div>
 
         <!-- PROSE -->
-        <article class="guide-prose" aria-label="Guide body">
+        <article class="guide-prose" aria-label="Guide body" data-i18n-aria-label="guide.prose.aria">
 
-          <p>
-            If you search <strong>what anti cheat does Delta Force use</strong>, the short answer is simple:
-            Delta Force runs on <strong>Anti-Cheat Expert (ACE)</strong>. That is the main Delta Force anti cheat
-            system used on PC and mobile. The Steam page also lists it by name and marks it as kernel-level.
-          </p>
-          <p>
-            This guide covers the full picture in plain language — what ACE is, how the stack works, and whether
-            Delta Force can detect DMA devices.
-          </p>
+          <p data-i18n-html="guide.p1.html">If you search <strong>what anti cheat does Delta Force use</strong>, the short answer is simple: Delta Force runs on <strong>Anti-Cheat Expert (ACE)</strong>. That is the main Delta Force anti cheat system used on PC and mobile. The Steam page also lists it by name and marks it as kernel-level.</p>
+          <p data-i18n="guide.p2">This guide covers the full picture in plain language — what ACE is, how the stack works, and whether Delta Force can detect DMA devices.</p>
 
-          <h2>What Kind of Anti-Cheat Does Delta Force Use?</h2>
-          <p>
-            So, <strong>what kind of anti cheat does Delta Force use</strong>? It uses ACE, a long-running game
-            security product from Tencent. ACE has been around since 2005 and is used across many online titles.
-            In Delta Force, the in-game security team (often called G.T.I. Security) works with ACE as the core
-            protection layer.
-          </p>
-          <p>
-            ACE is not a single check. It is a mix of tools that watch the client, known cheat signatures, player
-            behavior, system trust settings, and hardware-level access paths. On PC, that means deep system access.
-            On mobile, the focus is more on stopping file edits, debug tools, speed hacks, and virtual machine use.
-          </p>
+          <h2 data-i18n="guide.h2.kind">What Kind of Anti-Cheat Does Delta Force Use?</h2>
+          <p data-i18n-html="guide.p3.html">So, <strong>what kind of anti cheat does Delta Force use</strong>? It uses ACE, a long-running game security product from Tencent. ACE has been around since 2005 and is used across many online titles. In Delta Force, the in-game security team (often called G.T.I. Security) works with ACE as the core protection layer.</p>
+          <p data-i18n="guide.p4">ACE is not a single check. It is a mix of tools that watch the client, known cheat signatures, player behavior, system trust settings, and hardware-level access paths. On PC, that means deep system access. On mobile, the focus is more on stopping file edits, debug tools, speed hacks, and virtual machine use.</p>
           <ul>
-            <li><strong>PC:</strong> client checks, signature scans, behavior analysis, Secure Boot / TPM support, DMA Shield</li>
-            <li><strong>Mobile:</strong> anti-debug, code protection, resource hardening, force-quit on modifiers and VMs</li>
-            <li><strong>Economy / chat:</strong> models that watch for illicit trading and abusive content</li>
+            <li data-i18n-html="guide.li.pc.html"><strong>PC:</strong> client checks, signature scans, behavior analysis, Secure Boot / TPM support, DMA Shield</li>
+            <li data-i18n-html="guide.li.mobile.html"><strong>Mobile:</strong> anti-debug, code protection, resource hardening, force-quit on modifiers and VMs</li>
+            <li data-i18n-html="guide.li.economy.html"><strong>Economy / chat:</strong> models that watch for illicit trading and abusive content</li>
           </ul>
 
-          <h2>Is Delta Force Using Kernel-Level Anti-Cheat?</h2>
-          <p>
-            Yes. <strong>Delta Force kernel anti cheat</strong> is confirmed. The Steam store page for Delta Force
-            states that the game uses kernel-level anti-cheat and names Anti-Cheat Expert (ACE).
-          </p>
-          <p>
-            Kernel-level means the anti-cheat can run with high system rights — deeper than a normal app. Developers
-            have said this level is needed to fight modern software cheats and many hardware-based methods. Without
-            kernel access, a large part of deep memory and driver-level abuse is harder to see and harder to stop.
-          </p>
-          <h3>What kernel-level ACE means for players</h3>
-          <p>
-            In practice, ACE installs with the game and can run services tied to anti-cheat protection. Some players
-            reported leftover services after uninstall in early launches. Later updates improved cleanup so ACE is
-            removed with the game more cleanly. If you run other kernel anti-cheats (like EAC or Vanguard), conflicts
-            can still happen if more than one wants deep system control at the same time — that is common across
-            kernel anti-cheat titles, not unique to Delta Force.
-          </p>
+          <h2 data-i18n="guide.h2.kernel">Is Delta Force Using Kernel-Level Anti-Cheat?</h2>
+          <p data-i18n-html="guide.p5.html">Yes. <strong>Delta Force kernel anti cheat</strong> is confirmed. The Steam store page for Delta Force states that the game uses kernel-level anti-cheat and names Anti-Cheat Expert (ACE).</p>
+          <p data-i18n="guide.p6">Kernel-level means the anti-cheat can run with high system rights — deeper than a normal app. Developers have said this level is needed to fight modern software cheats and many hardware-based methods. Without kernel access, a large part of deep memory and driver-level abuse is harder to see and harder to stop.</p>
+          <h3 data-i18n="guide.h3.kernelMeans">What kernel-level ACE means for players</h3>
+          <p data-i18n="guide.p7">In practice, ACE installs with the game and can run services tied to anti-cheat protection. Some players reported leftover services after uninstall in early launches. Later updates improved cleanup so ACE is removed with the game more cleanly. If you run other kernel anti-cheats (like EAC or Vanguard), conflicts can still happen if more than one wants deep system control at the same time — that is common across kernel anti-cheat titles, not unique to Delta Force.</p>
 
-          <h2>How Delta Force's Anti-Cheat Works Explained</h2>
-          <p>
-            ACE does not rely on one trick. Official security briefs describe a layered setup. Here is how Delta
-            Force anti cheat works in simple terms.
-          </p>
+          <h2 data-i18n="guide.h2.how">How Delta Force's Anti-Cheat Works Explained</h2>
+          <p data-i18n="guide.p8">ACE does not rely on one trick. Official security briefs describe a layered setup. Here is how Delta Force anti cheat works in simple terms.</p>
 
-          <h3>1. Client and signature checks</h3>
-          <p>
-            ACE watches the game client for odd changes and known cheat files or patterns. If a tool matches a known
-            signature, or the client looks altered in the wrong way, the system can flag or block it. This catches
-            common public cheats and recycled builds fast.
-          </p>
+          <h3 data-i18n="guide.h3.client">1. Client and signature checks</h3>
+          <p data-i18n="guide.p9">ACE watches the game client for odd changes and known cheat files or patterns. If a tool matches a known signature, or the client looks altered in the wrong way, the system can flag or block it. This catches common public cheats and recycled builds fast.</p>
 
-          <h3>2. Behavior analysis</h3>
-          <p>
-            Signature scans alone are not enough. ACE also looks at how a player acts in matches — things like aim
-            that looks impossible, reaction times that do not fit human play, or movement that lines up with aimbot
-            or wallhack use. Replay and behavior models help catch cases where the cheat file itself is hard to see.
-          </p>
+          <h3 data-i18n="guide.h3.behavior">2. Behavior analysis</h3>
+          <p data-i18n="guide.p10">Signature scans alone are not enough. ACE also looks at how a player acts in matches — things like aim that looks impossible, reaction times that do not fit human play, or movement that lines up with aimbot or wallhack use. Replay and behavior models help catch cases where the cheat file itself is hard to see.</p>
 
-          <h3>3. Secure Boot and TPM 2.0</h3>
-          <p>
-            Delta Force has pushed Secure Boot and TPM 2.0 as part of the trust chain. Secure Boot helps stop untrusted
-            boot code from loading before Windows and before ACE. TPM 2.0 helps confirm the machine environment and
-            supports stronger hardware-linked bans. The goal is to reduce bootkits and early memory cheats that try
-            to start before the anti-cheat is ready.
-          </p>
+          <h3 data-i18n="guide.h3.secureBoot">3. Secure Boot and TPM 2.0</h3>
+          <p data-i18n="guide.p11">Delta Force has pushed Secure Boot and TPM 2.0 as part of the trust chain. Secure Boot helps stop untrusted boot code from loading before Windows and before ACE. TPM 2.0 helps confirm the machine environment and supports stronger hardware-linked bans. The goal is to reduce bootkits and early memory cheats that try to start before the anti-cheat is ready.</p>
 
-          <h3>4. Game data and environment checks</h3>
-          <p>
-            Later security updates also focus on abnormal system environments, suspicious execution paths, shellcode,
-            unauthorized drivers, and game-data tampering. In short: ACE watches both what is installed and how the
-            match environment behaves.
-          </p>
+          <h3 data-i18n="guide.h3.env">4. Game data and environment checks</h3>
+          <p data-i18n="guide.p12">Later security updates also focus on abnormal system environments, suspicious execution paths, shellcode, unauthorized drivers, and game-data tampering. In short: ACE watches both what is installed and how the match environment behaves.</p>
 
-          <h2>Can Delta Force Detect DMA Devices?</h2>
-          <p>
-            Short answer: Delta Force has dedicated systems built to stop and detect DMA abuse. That does not mean
-            every DMA setup fails forever — but it does mean DMA is a major target of the current anti-cheat stack.
-          </p>
-          <p>
-            DMA (Direct Memory Access) lets some hardware talk to RAM without going through the normal CPU path.
-            Cheat hardware can abuse that path to read game memory for ESP-style data or to help with aim tools.
-            Because the read can bypass normal software checks, older anti-cheats struggled with it.
-          </p>
-          <h3>What DMA Shield does</h3>
-          <p>
-            ACE and the Delta Force security team rolled out <strong>DMA Shield</strong> — enhanced hardware DMA
-            protection built on top of Windows Kernel DMA Protection. Official briefs explain it like this:
-          </p>
+          <h2 data-i18n="guide.h2.dma">Can Delta Force Detect DMA Devices?</h2>
+          <p data-i18n="guide.p13">Short answer: Delta Force has dedicated systems built to stop and detect DMA abuse. That does not mean every DMA setup fails forever — but it does mean DMA is a major target of the current anti-cheat stack.</p>
+          <p data-i18n="guide.p14">DMA (Direct Memory Access) lets some hardware talk to RAM without going through the normal CPU path. Cheat hardware can abuse that path to read game memory for ESP-style data or to help with aim tools. Because the read can bypass normal software checks, older anti-cheats struggled with it.</p>
+          <h3 data-i18n="guide.h3.dmaShield">What DMA Shield does</h3>
+          <p data-i18n-html="guide.p15.html">ACE and the Delta Force security team rolled out <strong>DMA Shield</strong> — enhanced hardware DMA protection built on top of Windows Kernel DMA Protection. Official briefs explain it like this:</p>
           <ul>
-            <li>Uses VT-d / IOMMU-style isolation so game memory is harder for abnormal devices to read freely</li>
-            <li>Can remap addresses so unrecognized devices get empty or junk data instead of real game data</li>
-            <li>Keeps PCI device signature data to help spot DMA-style hardware while the game is running</li>
-            <li>Can flag hardware signatures and support hardware-linked bans when abuse is confirmed</li>
-            <li>Can require stronger DMA protection settings for accounts or setups seen as high risk</li>
+            <li data-i18n="guide.dma.li1">Uses VT-d / IOMMU-style isolation so game memory is harder for abnormal devices to read freely</li>
+            <li data-i18n="guide.dma.li2">Can remap addresses so unrecognized devices get empty or junk data instead of real game data</li>
+            <li data-i18n="guide.dma.li3">Keeps PCI device signature data to help spot DMA-style hardware while the game is running</li>
+            <li data-i18n="guide.dma.li4">Can flag hardware signatures and support hardware-linked bans when abuse is confirmed</li>
+            <li data-i18n="guide.dma.li5">Can require stronger DMA protection settings for accounts or setups seen as high risk</li>
           </ul>
-          <p>
-            ACE also still uses replay and behavior checks. Even when a hardware path is hard to see directly, odd
-            in-game results (perfect tracking, impossible info) can still lead to review and bans.
-          </p>
-          <h3>Honest takeaway on DMA detection</h3>
-          <p>
-            Can Delta Force detect DMA devices? It can detect many DMA devices and block or poison unauthorized
-            memory access through DMA Shield, device checks, and enforcement. No anti-cheat is perfect forever, and
-            the cat-and-mouse cycle continues. But for Delta Force in 2025–2026, DMA is no longer treated as an
-            invisible free pass — it is a named, active defense target.
-          </p>
+          <p data-i18n="guide.p16">ACE also still uses replay and behavior checks. Even when a hardware path is hard to see directly, odd in-game results (perfect tracking, impossible info) can still lead to review and bans.</p>
+          <h3 data-i18n="guide.h3.takeaway">Honest takeaway on DMA detection</h3>
+          <p data-i18n="guide.p17">Can Delta Force detect DMA devices? It can detect many DMA devices and block or poison unauthorized memory access through DMA Shield, device checks, and enforcement. No anti-cheat is perfect forever, and the cat-and-mouse cycle continues. But for Delta Force in 2025–2026, DMA is no longer treated as an invisible free pass — it is a named, active defense target.</p>
 
-          <h2>Delta Force Anti Cheat — Quick Summary</h2>
+          <h2 data-i18n="guide.h2.summary">Delta Force Anti Cheat — Quick Summary</h2>
           <div class="guide-requirements-card">
             <ul>
-              <li><strong>Anti-cheat name:</strong> Anti-Cheat Expert (ACE)</li>
-              <li><strong>Kernel-level:</strong> Yes — confirmed on Steam and by developer comments</li>
-              <li><strong>Main PC layers:</strong> signatures, client checks, behavior analysis, Secure Boot / TPM, DMA Shield</li>
-              <li><strong>DMA:</strong> Actively defended with DMA Shield, VT-d / IOMMU support, and hardware signature checks</li>
-              <li><strong>Mobile:</strong> Prevention-first hardening against modifiers, debug tools, and VMs</li>
+              <li data-i18n-html="guide.summary.1.html"><strong>Anti-cheat name:</strong> Anti-Cheat Expert (ACE)</li>
+              <li data-i18n-html="guide.summary.2.html"><strong>Kernel-level:</strong> Yes — confirmed on Steam and by developer comments</li>
+              <li data-i18n-html="guide.summary.3.html"><strong>Main PC layers:</strong> signatures, client checks, behavior analysis, Secure Boot / TPM, DMA Shield</li>
+              <li data-i18n-html="guide.summary.4.html"><strong>DMA:</strong> Actively defended with DMA Shield, VT-d / IOMMU support, and hardware signature checks</li>
+              <li data-i18n-html="guide.summary.5.html"><strong>Mobile:</strong> Prevention-first hardening against modifiers, debug tools, and VMs</li>
             </ul>
           </div>
 
-          <p>
-            If you came here asking <strong>what anti cheat does Delta Force use</strong>, you now have the full
-            answer: ACE, running as a kernel-level Delta Force anti cheat with extra layers for behavior, boot trust,
-            and DMA hardware.
-          </p>
+          <p data-i18n-html="guide.p18.html">If you came here asking <strong>what anti cheat does Delta Force use</strong>, you now have the full answer: ACE, running as a kernel-level Delta Force anti cheat with extra layers for behavior, boot trust, and DMA hardware.</p>
 
           <!-- CTA ROW -->
           <div class="guide-cta-row">
-            <span class="guide-cta-eyebrow">Next Step</span>
-            <h2 class="guide-cta-heading">Ready for Delta Force Tools Built Around ACE?</h2>
-            <p class="guide-cta-lead">Browse plans built for current Delta Force anti cheat conditions, including DMA-focused options.</p>
+            <span class="guide-cta-eyebrow" data-i18n="guide.cta.eyebrow">Next Step</span>
+            <h2 class="guide-cta-heading" data-i18n="guide.cta.title">Ready for Delta Force Tools Built Around ACE?</h2>
+            <p class="guide-cta-lead" data-i18n="guide.cta.lead">Browse plans built for current Delta Force anti cheat conditions, including DMA-focused options.</p>
             <div class="guide-cta-buttons">
-              <a href="/delta-force-cheats.html" class="btn btn-primary" id="guide-buy-page-btn">View Plans →</a>
-              <a href="/blog.html" class="btn btn-secondary" id="guide-blog-btn">Blog &amp; Updates</a>
+              <a href="/delta-force-cheats.html" class="btn btn-primary" id="guide-buy-page-btn" data-i18n="guide.cta.plans">View Plans →</a>
+              <a href="/blog.html" class="btn btn-secondary" id="guide-blog-btn" data-i18n="guide.cta.blog">Blog & Updates</a>
             </div>
           </div>
 
@@ -332,11 +296,11 @@
         <!-- Brand Column -->
         <div class="footer-brand">
           <a href="/" class="footer-brand-logo notranslate" id="footer-brand-link">
-            <img src="/assets/delta-force-logo.png" alt="Delta Force Cheats" class="footer-logo-img" loading="lazy">
+            <img src="/assets/delta-force-logo.png" alt="Delta Force Cheats" class="footer-logo-img" loading="lazy" data-i18n-alt="common.alt.deltaLogo">
           </a>
-          <p class="footer-tagline">Premium Delta Force cheat software with aimbot, ESP, DMA support, and anti-cheat bypass. Updated every season. Trusted by 10,000+ players.</p>
-          <nav class="footer-social" aria-label="Zadeyo on social media">
-            <a href="https://discord.gg/35TJN2BnvZ" aria-label="Zadeyo on Discord" id="footer-discord-link" target="_blank" rel="noopener noreferrer">
+          <p class="footer-tagline" data-i18n="common.footer.tagline">Premium Delta Force cheat software with aimbot, ESP, DMA support, and anti-cheat bypass. Updated every season. Trusted by 10,000+ players.</p>
+          <nav class="footer-social" aria-label="Zadeyo on social media" data-i18n-aria-label="common.aria.social">
+            <a href="https://discord.gg/35TJN2BnvZ" aria-label="Zadeyo on Discord" id="footer-discord-link" target="_blank" rel="noopener noreferrer" data-i18n-aria-label="common.aria.discord">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.197.373.291a.077.077 0 0 1-.006.128 12.3 12.3 0 0 1-1.873.892.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.876 19.876 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.028ZM8.02 15.278c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.955 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.946 2.419-2.157 2.419Z"/></svg>
             </a>
           </nav>
@@ -344,39 +308,39 @@
 
         <!-- Site Column -->
         <div class="footer-col">
-          <h4>Site</h4>
+          <h4 data-i18n="common.footer.col.site">Site</h4>
           <ul>
-            <li><a href="/" id="footer-home-link">Home</a></li>
-            <li><a href="/delta-force-cheats.html" id="footer-buy-link">Buy</a></li>
-            <li><a href="/blog.html" id="footer-blog-link">Blog</a></li>
-            <li><a href="/guide.html" id="footer-guide-link">Guide</a></li>
+            <li><a href="/" id="footer-home-link" data-i18n="nav.home">Home</a></li>
+            <li><a href="/delta-force-cheats.html" id="footer-buy-link" data-i18n="nav.buy">Buy</a></li>
+            <li><a href="/blog.html" id="footer-blog-link" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/guide.html" id="footer-guide-link" data-i18n="nav.guide">Guide</a></li>
           </ul>
         </div>
 
         <!-- Store Column -->
         <div class="footer-col">
-          <h4>Store</h4>
+          <h4 data-i18n="common.footer.col.store">Store</h4>
           <ul>
-            <li><a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" target="_blank" rel="noopener noreferrer" id="footer-store-main-link">Buy Delta Force Cheat</a></li>
-            <li><a href="https://zadeyo.com" target="_blank" rel="noopener noreferrer" id="footer-store-link">Zadeyo Store</a></li>
+            <li><a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" target="_blank" rel="noopener noreferrer" id="footer-store-main-link" data-i18n="common.footer.link.buyCheat">Buy Delta Force Cheat</a></li>
+            <li><a href="https://zadeyo.com" target="_blank" rel="noopener noreferrer" id="footer-store-link" data-i18n="common.footer.link.store">Zadeyo Store</a></li>
           </ul>
         </div>
 
         <!-- Support Column -->
         <div class="footer-col">
-          <h4>Support</h4>
+          <h4 data-i18n="common.footer.col.support">Support</h4>
           <ul>
-            <li><a href="https://discord.gg/35TJN2BnvZ" target="_blank" rel="noopener noreferrer" id="footer-support-discord-link">Discord Support</a></li>
+            <li><a href="https://discord.gg/35TJN2BnvZ" target="_blank" rel="noopener noreferrer" id="footer-support-discord-link" data-i18n="common.footer.link.discordSupport">Discord Support</a></li>
           </ul>
         </div>
 
         <!-- Help Us Grow Column -->
         <div class="footer-col">
-          <h4>Help Us Grow</h4>
+          <h4 data-i18n="common.footer.col.helpGrow">Help Us Grow</h4>
           <ul>
-            <li><a href="https://twitter.com/intent/tweet?text=Delta%20Force%20Cheats%20ESP%20%26%20Aimbot%20https%3A%2F%2Fnovax.gg%2F" target="_blank" rel="noopener noreferrer" id="footer-share-twitter-link">Share on X / Twitter</a></li>
-            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnovax.gg%2F" target="_blank" rel="noopener noreferrer" id="footer-share-fb-link">Share on Facebook</a></li>
-            <li><a href="https://www.reddit.com/submit?url=https%3A%2F%2Fnovax.gg%2F&title=Delta%20Force%20Cheats%20ESP%20%26%20Aimbot" target="_blank" rel="noopener noreferrer" id="footer-share-reddit-link">Share on Reddit</a></li>
+            <li><a href="https://twitter.com/intent/tweet?text=Delta%20Force%20Cheats%20ESP%20%26%20Aimbot%20https%3A%2F%2Fnovax.gg%2F" target="_blank" rel="noopener noreferrer" id="footer-share-twitter-link" data-i18n="common.footer.link.shareX">Share on X / Twitter</a></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnovax.gg%2F" target="_blank" rel="noopener noreferrer" id="footer-share-fb-link" data-i18n="common.footer.link.shareFb">Share on Facebook</a></li>
+            <li><a href="https://www.reddit.com/submit?url=https%3A%2F%2Fnovax.gg%2F&title=Delta%20Force%20Cheats%20ESP%20%26%20Aimbot" target="_blank" rel="noopener noreferrer" id="footer-share-reddit-link" data-i18n="common.footer.link.shareReddit">Share on Reddit</a></li>
           </ul>
         </div>
 
@@ -386,17 +350,18 @@
 
       <div class="footer-bottom">
         <div class="footer-legal-links">
-          <a href="#" id="footer-privacy-link">Privacy Policy</a>
-          <a href="#" id="footer-terms-link">Terms of Service</a>
-          <span>Not affiliated with any game developer.</span>
+          <a href="#" id="footer-privacy-link" data-i18n="common.footer.link.privacy">Privacy Policy</a>
+          <a href="#" id="footer-terms-link" data-i18n="common.footer.link.terms">Terms of Service</a>
+          <span data-i18n="common.footer.disclaimerShort">Not affiliated with any game developer.</span>
         </div>
-        <span class="footer-copyright">&copy; 2026 Zadeyo. All rights reserved.</span>
+        <span class="footer-copyright" data-i18n="common.footer.copyright">© 2026 Zadeyo. All rights reserved.</span>
       </div>
 
-      <p class="disclaimer">This software is provided for entertainment purposes only. Using cheat software on official servers may violate the game&rsquo;s terms of service and can result in an account ban. Use responsibly.</p>
+      <p class="disclaimer" data-i18n="common.footer.disclaimer">This software is provided for entertainment purposes only. Using cheat software on official servers may violate the game’s terms of service and can result in an account ban. Use responsibly.</p>
     </div>
   </footer>
 
+  <script src="/js/i18n.js" defer></script>
   <script src="/js/main.js" defer></script>
 </body>
 </html>

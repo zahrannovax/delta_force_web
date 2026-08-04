@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-title-key="buy.seo.title">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/css/style.css?v=7">
+  <link rel="stylesheet" href="/css/style.css?v=9">
 
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json">
@@ -130,47 +130,85 @@
 
   <!-- Lenis Smooth Scroll -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <!-- Early lang/dir to avoid RTL flash -->
+  <script>
+    (function () {
+      try {
+        var l = localStorage.getItem('df_lang') || 'en';
+        document.documentElement.lang = l;
+        document.documentElement.dir = (l === 'ar' || l === 'ur') ? 'rtl' : 'ltr';
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
 </head>
 <body>
 
   <!-- ══════════════════════════════════════════════════════════
        1. TOP STRIP
   ════════════════════════════════════════════════════════════ -->
-  <div class="top-strip" role="banner" aria-label="Announcement">
-    🔒 Ricochet bypass active &amp; updated — your Delta Force hack stays undetected.
-    <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" target="_blank" rel="noopener noreferrer" id="buy-strip-link">Subscribe Now →</a>
+  <div class="top-strip" role="banner" aria-label="Announcement" data-i18n-aria-label="common.aria.announcement">
+    <span data-i18n="buy.strip.text">🔒 Ricochet bypass active &amp; updated — your Delta Force hack stays undetected.</span>
+    <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" target="_blank" rel="noopener noreferrer" id="buy-strip-link" data-i18n="common.strip.cta.subscribe">Subscribe Now →</a>
   </div>
 
   <!-- ══════════════════════════════════════════════════════════
        2. NAVBAR
   ════════════════════════════════════════════════════════════ -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
+  <nav class="navbar" role="navigation" aria-label="Main navigation" data-i18n-aria-label="common.aria.mainNav">
     <div class="container navbar-inner">
-      <a class="navbar-logo" href="/index.html" aria-label="Home">
-        <img src="/assets/zadeyo-logo.webp" alt="Website Logo" width="120" height="32" fetchpriority="high">
+      <a class="navbar-logo" href="/index.html" aria-label="Home" data-i18n-aria-label="common.aria.home">
+        <img src="/assets/zadeyo-logo.webp" alt="Website Logo" width="120" height="32" fetchpriority="high" data-i18n-alt="common.alt.logo">
       </a>
       <div class="navbar-links" role="menubar">
-        <a href="/index.html" role="menuitem" id="buy-nav-home">Home</a>
-        <a href="/delta-force-cheats.html" role="menuitem" class="active" id="buy-nav-buy">Buy</a>
-        <a href="/blog.html" role="menuitem" id="buy-nav-blog">Blog</a>
-        <a href="/guide.html" role="menuitem" id="buy-nav-guide">Guide</a>
+        <a href="/index.html" role="menuitem" id="buy-nav-home" data-i18n="nav.home">Home</a>
+        <a href="/delta-force-cheats.html" role="menuitem" class="active" id="buy-nav-buy" data-i18n="nav.buy">Buy</a>
+        <a href="/blog.html" role="menuitem" id="buy-nav-blog" data-i18n="nav.blog">Blog</a>
+        <a href="/guide.html" role="menuitem" id="buy-nav-guide" data-i18n="nav.guide">Guide</a>
       </div>
-      <div class="navbar-cta">
-        <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank" rel="noopener noreferrer" id="buy-nav-cta">Buy Now</a>
+      <div class="navbar-actions">
+        <div class="lang-switcher" id="lang-switcher">
+          <button type="button" class="lang-trigger" id="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" data-i18n-aria-label="common.aria.selectLanguage">
+            <span id="lang-current-label">English</span>
+            <svg class="lang-trigger-chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="lang-menu" role="listbox" aria-label="Languages" data-i18n-aria-label="common.aria.languages">
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="en" aria-selected="true">English</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="tr" aria-selected="false">Türkçe</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ar" aria-selected="false">العربية</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="de" aria-selected="false">Deutsch</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="fr" aria-selected="false">Français</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="es" aria-selected="false">Español</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="pt" aria-selected="false">Português</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ru" aria-selected="false">Русский</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ja" aria-selected="false">日本語</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="zh" aria-selected="false">中文</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="hi" aria-selected="false">हिन्दी</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ur" aria-selected="false">اردو</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="id" aria-selected="false">Bahasa Indonesia</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="pl" aria-selected="false">Polski</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="nl" aria-selected="false">Nederlands</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="it" aria-selected="false">Italiano</button></li>
+          </ul>
+        </div>
+        <div class="navbar-cta">
+          <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank" rel="noopener noreferrer" id="buy-nav-cta" data-i18n="nav.cta">Buy Now</a>
+        </div>
+        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" id="buy-hamburger-btn" data-i18n-aria-label="common.aria.toggleMenu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" id="buy-hamburger-btn">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
   <!-- Mobile Nav Overlay -->
-  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation" id="buy-mobile-nav">
-    <a href="/index.html">Home</a>
-    <a href="/delta-force-cheats.html">Buy</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/guide.html">Guide</a>
-    <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank" rel="noopener noreferrer" id="buy-mobile-cta">Buy Now</a>
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation" id="buy-mobile-nav" data-i18n-aria-label="common.aria.mobileNav">
+    <a href="/index.html" data-i18n="nav.home">Home</a>
+    <a href="/delta-force-cheats.html" data-i18n="nav.buy">Buy</a>
+    <a href="/blog.html" data-i18n="nav.blog">Blog</a>
+    <a href="/guide.html" data-i18n="nav.guide">Guide</a>
+    <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank" rel="noopener noreferrer" id="buy-mobile-cta" data-i18n="nav.cta">Buy Now</a>
   </div>
 
   <main>
@@ -178,27 +216,23 @@
     <!-- ════════════════════════════════════════════════════════
          3. PAGE HEADER + BREADCRUMBS
     ══════════════════════════════════════════════════════════ -->
-    <section class="page-header-section" aria-label="Page header">
+    <section class="page-header-section" aria-label="Page header" data-i18n-aria-label="buy.header.aria">
       <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb navigation">
-          <a href="/index.html" id="breadcrumb-home">Home</a>
-          <span class="breadcrumb-sep" aria-hidden="true">›</span>
-          <span class="breadcrumb-current" aria-current="page">Delta Force Cheats</span>
+        <nav class="breadcrumb" aria-label="Breadcrumb navigation" data-i18n-aria-label="common.aria.breadcrumb">
+          <a href="/index.html" id="breadcrumb-home" data-i18n="common.breadcrumb.home">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true" data-i18n="common.breadcrumb.sep">/</span>
+          <span class="breadcrumb-current" aria-current="page" data-i18n="buy.breadcrumb.current">Delta Force Cheats</span>
         </nav>
 
         <div class="section-heading mb-0">
-          <span class="eyebrow">Purchase Access</span>
-          <h1>Delta Force Cheats for PC</h1>
-          <p>
-            The most advanced Delta Force hack available in 2026. Advanced Aimbot with prediction, Player ESP with class identification,
-            Weapon ESP and attachments, Gadget ESP, Vehicle ESP with spawn tracking, no recoil control, Aim FOV customization,
-            stream-proof overlay, anti-cheat bypass (Ricochet), quick load injection, CLOUD-DMA option, and AWS option —
-            updated every season with 24/7 Support.
-            Choose your plan and get instant access.
+          <span class="eyebrow" data-i18n="buy.header.eyebrow">Purchase Access</span>
+          <h1 data-i18n="buy.header.title">Delta Force Cheats for PC</h1>
+          <p data-i18n="buy.header.lead">
+            The most advanced Delta Force hack available in 2026. Advanced Aimbot with prediction, Player ESP with class identification, Weapon ESP and attachments, Gadget ESP, Vehicle ESP with spawn tracking, no recoil control, Aim FOV customization, stream-proof overlay, anti-cheat bypass (Ricochet), quick load injection, CLOUD-DMA option, and AWS option — updated every season with 24/7 Support. Choose your plan and get instant access.
           </p>
           <!-- Keyword injection for SEO -->
           <p style="margin-top:12px; font-size:0.82rem; color: rgba(161,161,170,0.6);">
-            Available for: <em>delta force cheats pc · delta force dma · delta force aimbot · delta force cheat software · delta force cheats paid</em>
+            <span data-i18n="buy.header.keywordsPrefix">Available for:</span> <em data-i18n="buy.header.keywords">delta force cheats pc · delta force dma · delta force aimbot · delta force cheat software · delta force cheats paid</em>
           </p>
         </div>
       </div>
@@ -207,72 +241,72 @@
     <!-- ════════════════════════════════════════════════════════
          4. PRICING
     ══════════════════════════════════════════════════════════ -->
-    <section id="pricing" class="showcase-outer" aria-label="Pricing plans" style="padding-top:20px;">
+    <section id="pricing" class="showcase-outer" aria-label="Pricing plans" data-i18n-aria-label="buy.pricing.aria" style="padding-top:20px;">
       <div class="showcase-panel showcase-panel--pricing">
         <div class="section-heading" style="position:relative;z-index:1;">
-          <span class="eyebrow">Pricing Plans</span>
-          <h2>Simple, Transparent Pricing</h2>
-          <p>All plans include the full Delta Force cheat feature set. No hidden fees. No feature locks between tiers.</p>
+          <span class="eyebrow" data-i18n="buy.pricing.eyebrow">Pricing Plans</span>
+          <h2 data-i18n="buy.pricing.title">Simple, Transparent Pricing</h2>
+          <p data-i18n="buy.pricing.lead">All plans include the full Delta Force cheat feature set. No hidden fees. No feature locks between tiers.</p>
         </div>
 
         <div class="pricing-showcase-grid">
 
           <!-- Monthly Plan -->
           <div class="price-card price-card--flat reveal" id="pricing-monthly">
-            <span class="price-plan-name">Monthly</span>
-            <div class="price-amount">$35</div>
-            <div class="price-period">per month · 31-day access</div>
-            <p class="price-desc">Full feature access for 31 days. Automatically updated with every Delta Force season. Renew anytime.</p>
+            <span class="price-plan-name" data-i18n="buy.pricing.monthly.name">Monthly</span>
+            <div class="price-amount" data-i18n="buy.pricing.monthly.amount">$35</div>
+            <div class="price-period" data-i18n="buy.pricing.monthly.period">per month · 31-day access</div>
+            <p class="price-desc" data-i18n="buy.pricing.monthly.desc">Full feature access for 31 days. Automatically updated with every Delta Force season. Renew anytime.</p>
 
-            <ul class="price-features-mini" aria-label="Monthly plan features">
-              <li>Advanced Aimbot with prediction</li>
-              <li>Player ESP with class identification</li>
-              <li>Weapon ESP and attachments</li>
-              <li>Gadget ESP — Find intel and gear</li>
-              <li>Vehicle ESP with spawn tracking</li>
-              <li>No recoil control system</li>
-              <li>Aim FOV customization</li>
-              <li>Stream-proof overlay</li>
-              <li>Anti-cheat bypass (Ricochet)</li>
-              <li>Quick load injection system</li>
-              <li>Regular updates with seasons</li>
-              <li>24/7 Support</li>
-              <li>CLOUD-DMA option</li>
-              <li>AWS option</li>
+            <ul class="price-features-mini" aria-label="Monthly plan features" data-i18n-aria-label="buy.pricing.monthly.featuresAria">
+              <li data-i18n="common.feat.aimbot">Advanced Aimbot with prediction</li>
+              <li data-i18n="common.feat.playerEsp">Player ESP with class identification</li>
+              <li data-i18n="common.feat.weaponEsp">Weapon ESP and attachments</li>
+              <li data-i18n="common.feat.gadgetEsp">Gadget ESP — Find intel and gear</li>
+              <li data-i18n="common.feat.vehicleEsp">Vehicle ESP with spawn tracking</li>
+              <li data-i18n="common.feat.noRecoil">No recoil control system</li>
+              <li data-i18n="common.feat.aimFov">Aim FOV customization</li>
+              <li data-i18n="common.feat.streamProof">Stream-proof overlay</li>
+              <li data-i18n="common.feat.bypass">Anti-cheat bypass (Ricochet)</li>
+              <li data-i18n="common.feat.quickLoad">Quick load injection system</li>
+              <li data-i18n="common.feat.updates">Regular updates with seasons</li>
+              <li data-i18n="common.feat.support247">24/7 Support</li>
+              <li data-i18n="common.feat.cloudDma">CLOUD-DMA option</li>
+              <li data-i18n="common.feat.aws">AWS option</li>
             </ul>
 
-            <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="price-cta is-purple" target="_blank" rel="noopener noreferrer" id="pricing-monthly-btn">
+            <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="price-cta is-purple" target="_blank" rel="noopener noreferrer" id="pricing-monthly-btn" data-i18n="buy.pricing.monthly.cta">
               Subscribe Monthly →
             </a>
           </div>
 
           <!-- Lifetime Plan -->
           <div class="price-card price-card--featured reveal" id="pricing-lifetime">
-            <span class="price-badge">Most Popular</span>
-            <span class="price-plan-name">Lifetime</span>
-            <div class="price-amount">$150</div>
-            <div class="price-period">one-time payment · permanent access</div>
-            <p class="price-desc">Pay once. Keep forever. All future updates, every season, included at no extra cost. Best value for long-term players.</p>
+            <span class="price-badge" data-i18n="buy.pricing.lifetime.badge">Most Popular</span>
+            <span class="price-plan-name" data-i18n="buy.pricing.lifetime.name">Lifetime</span>
+            <div class="price-amount" data-i18n="buy.pricing.lifetime.amount">$150</div>
+            <div class="price-period" data-i18n="buy.pricing.lifetime.period">one-time payment · permanent access</div>
+            <p class="price-desc" data-i18n="buy.pricing.lifetime.desc">Pay once. Keep forever. All future updates, every season, included at no extra cost. Best value for long-term players.</p>
 
-            <ul class="price-features-mini" aria-label="Lifetime plan features">
-              <li>Advanced Aimbot with prediction</li>
-              <li>Player ESP with class identification</li>
-              <li>Weapon ESP and attachments</li>
-              <li>Gadget ESP — Find intel and gear</li>
-              <li>Vehicle ESP with spawn tracking</li>
-              <li>No recoil control system</li>
-              <li>Aim FOV customization</li>
-              <li>Stream-proof overlay</li>
-              <li>Anti-cheat bypass (Ricochet)</li>
-              <li>Quick load injection system</li>
-              <li>Regular updates with seasons</li>
-              <li>24/7 Support</li>
-              <li>CLOUD-DMA option</li>
-              <li>AWS option</li>
-              <li>Lifetime access — pay once, keep forever</li>
+            <ul class="price-features-mini" aria-label="Lifetime plan features" data-i18n-aria-label="buy.pricing.lifetime.featuresAria">
+              <li data-i18n="common.feat.aimbot">Advanced Aimbot with prediction</li>
+              <li data-i18n="common.feat.playerEsp">Player ESP with class identification</li>
+              <li data-i18n="common.feat.weaponEsp">Weapon ESP and attachments</li>
+              <li data-i18n="common.feat.gadgetEsp">Gadget ESP — Find intel and gear</li>
+              <li data-i18n="common.feat.vehicleEsp">Vehicle ESP with spawn tracking</li>
+              <li data-i18n="common.feat.noRecoil">No recoil control system</li>
+              <li data-i18n="common.feat.aimFov">Aim FOV customization</li>
+              <li data-i18n="common.feat.streamProof">Stream-proof overlay</li>
+              <li data-i18n="common.feat.bypass">Anti-cheat bypass (Ricochet)</li>
+              <li data-i18n="common.feat.quickLoad">Quick load injection system</li>
+              <li data-i18n="common.feat.updates">Regular updates with seasons</li>
+              <li data-i18n="common.feat.support247">24/7 Support</li>
+              <li data-i18n="common.feat.cloudDma">CLOUD-DMA option</li>
+              <li data-i18n="common.feat.aws">AWS option</li>
+              <li data-i18n="common.feat.lifetimeExtra">Lifetime access — pay once, keep forever</li>
             </ul>
 
-            <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="price-cta is-inverted" target="_blank" rel="noopener noreferrer" id="pricing-lifetime-btn">
+            <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="price-cta is-inverted" target="_blank" rel="noopener noreferrer" id="pricing-lifetime-btn" data-i18n="buy.pricing.lifetime.cta">
               Get Lifetime Access →
             </a>
           </div>
@@ -284,66 +318,66 @@
     <!-- ════════════════════════════════════════════════════════
          5. FEATURES
     ══════════════════════════════════════════════════════════ -->
-    <section id="features" class="section section--card" aria-label="Full feature list">
+    <section id="features" class="section section--card" aria-label="Full feature list" data-i18n-aria-label="buy.features.aria">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Complete Feature List</span>
-          <h2>Every Delta Force Cheat Feature</h2>
-          <p>Every tool in our Delta Force hack is fully operational and updated with every game season. No filler features — everything listed here works.</p>
+          <span class="eyebrow" data-i18n="buy.features.eyebrow">Complete Feature List</span>
+          <h2 data-i18n="buy.features.title">Every Delta Force Cheat Feature</h2>
+          <p data-i18n="buy.features.lead">Every tool in our Delta Force hack is fully operational and updated with every game season. No filler features — everything listed here works.</p>
         </div>
 
         <div class="features-grid">
 
           <div class="feature-card reveal">
-            <h3><span class="feat-icon" aria-hidden="true">🎯</span>Aimbot Suite</h3>
-            <ul class="feature-list" aria-label="Aimbot features">
-              <li>Advanced Aimbot with prediction</li>
-              <li>No recoil control system</li>
-              <li>Aim FOV customization</li>
+            <h3><span class="feat-icon" aria-hidden="true">🎯</span><span data-i18n="buy.features.aimbot.title">Aimbot Suite</span></h3>
+            <ul class="feature-list" aria-label="Aimbot features" data-i18n-aria-label="buy.features.aimbot.aria">
+              <li data-i18n="common.feat.aimbot">Advanced Aimbot with prediction</li>
+              <li data-i18n="common.feat.noRecoil">No recoil control system</li>
+              <li data-i18n="common.feat.aimFov">Aim FOV customization</li>
             </ul>
           </div>
 
           <div class="feature-card reveal">
-            <h3><span class="feat-icon" aria-hidden="true">👁️</span>ESP Suite</h3>
-            <ul class="feature-list" aria-label="ESP features">
-              <li>Player ESP with class identification</li>
-              <li>Weapon ESP and attachments</li>
-              <li>Gadget ESP — Find intel and gear</li>
-              <li>Vehicle ESP with spawn tracking</li>
+            <h3><span class="feat-icon" aria-hidden="true">👁️</span><span data-i18n="buy.features.esp.title">ESP Suite</span></h3>
+            <ul class="feature-list" aria-label="ESP features" data-i18n-aria-label="buy.features.esp.aria">
+              <li data-i18n="common.feat.playerEsp">Player ESP with class identification</li>
+              <li data-i18n="common.feat.weaponEsp">Weapon ESP and attachments</li>
+              <li data-i18n="common.feat.gadgetEsp">Gadget ESP — Find intel and gear</li>
+              <li data-i18n="common.feat.vehicleEsp">Vehicle ESP with spawn tracking</li>
             </ul>
           </div>
 
           <div class="feature-card reveal">
-            <h3><span class="feat-icon" aria-hidden="true">🔒</span>Security &amp; Anti-Cheat</h3>
-            <ul class="feature-list" aria-label="Security features">
-              <li>Anti-cheat bypass (Ricochet)</li>
-              <li>Stream-proof overlay</li>
-              <li>Quick load injection system</li>
-              <li>Regular updates with seasons</li>
+            <h3><span class="feat-icon" aria-hidden="true">🔒</span><span data-i18n="buy.features.security.title">Security &amp; Anti-Cheat</span></h3>
+            <ul class="feature-list" aria-label="Security features" data-i18n-aria-label="buy.features.security.aria">
+              <li data-i18n="common.feat.bypass">Anti-cheat bypass (Ricochet)</li>
+              <li data-i18n="common.feat.streamProof">Stream-proof overlay</li>
+              <li data-i18n="common.feat.quickLoad">Quick load injection system</li>
+              <li data-i18n="common.feat.updates">Regular updates with seasons</li>
             </ul>
           </div>
 
           <div class="feature-card reveal">
-            <h3><span class="feat-icon" aria-hidden="true">☁️</span>Advanced Options</h3>
-            <ul class="feature-list" aria-label="Advanced options">
-              <li>CLOUD-DMA option</li>
-              <li>AWS option</li>
-              <li>24/7 Support</li>
+            <h3><span class="feat-icon" aria-hidden="true">☁️</span><span data-i18n="buy.features.advanced.title">Advanced Options</span></h3>
+            <ul class="feature-list" aria-label="Advanced options" data-i18n-aria-label="buy.features.advanced.aria">
+              <li data-i18n="common.feat.cloudDma">CLOUD-DMA option</li>
+              <li data-i18n="common.feat.aws">AWS option</li>
+              <li data-i18n="common.feat.support247">24/7 Support</li>
             </ul>
           </div>
 
         </div>
 
         <!-- System Requirements -->
-        <div class="sys-req-box mt-32 reveal" aria-label="System requirements">
-          <h3>⚙️ System Requirements</h3>
+        <div class="sys-req-box mt-32 reveal" aria-label="System requirements" data-i18n-aria-label="common.aria.sysReq">
+          <h3 data-i18n="common.sysReq.title">⚙️ System Requirements</h3>
           <div class="sys-req-list">
-            <div class="sys-req-item"><span class="req-dot"></span>HVCI — ON</div>
-            <div class="sys-req-item"><span class="req-dot"></span>Core Isolation — ON</div>
-            <div class="sys-req-item"><span class="req-dot"></span>TPM — ON</div>
-            <div class="sys-req-item"><span class="req-dot"></span>Secure Boot — ON</div>
-            <div class="sys-req-item"><span class="req-dot"></span>CLOUD-DMA option / AWS option available</div>
-            <div class="sys-req-item"><span class="req-dot"></span>Windows 10 / 11 (64-bit)</div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.hvci">HVCI — ON</span></div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.coreIsolation">Core Isolation — ON</span></div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.tpm">TPM — ON</span></div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.secureBoot">Secure Boot — ON</span></div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.dmaAws">CLOUD-DMA option / AWS option available</span></div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.windows">Windows 10 / 11 (64-bit)</span></div>
           </div>
         </div>
       </div>
@@ -352,12 +386,12 @@
     <!-- ════════════════════════════════════════════════════════
          6. HACK PREVIEW SCREENSHOTS
     ══════════════════════════════════════════════════════════ -->
-    <section id="buy-preview" class="section" aria-label="Cheat preview screenshots">
+    <section id="buy-preview" class="section" aria-label="Cheat preview screenshots" data-i18n-aria-label="buy.preview.aria">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Live Screenshots</span>
-          <h2>Delta Force Hack In Action</h2>
-          <p>Every screenshot is captured from a live Delta Force match running the current build of our cheat software.</p>
+          <span class="eyebrow" data-i18n="buy.preview.eyebrow">Live Screenshots</span>
+          <h2 data-i18n="buy.preview.title">Delta Force Hack In Action</h2>
+          <p data-i18n="buy.preview.lead">Every screenshot is captured from a live Delta Force match running the current build of our cheat software.</p>
         </div>
 
         <div class="preview-gallery">
@@ -369,8 +403,9 @@
               decoding="async"
               width="800"
               height="450"
+              data-i18n-alt="buy.preview.img1.alt"
             >
-            <span class="preview-card-label">Aimbot + Player ESP Active</span>
+            <span class="preview-card-label" data-i18n="buy.preview.img1.label">Aimbot + Player ESP Active</span>
           </div>
           <div class="preview-card">
             <img
@@ -380,13 +415,14 @@
               decoding="async"
               width="800"
               height="450"
+              data-i18n-alt="buy.preview.img2.alt"
             >
-            <span class="preview-card-label">Vehicle ESP + Weapon ESP</span>
+            <span class="preview-card-label" data-i18n="buy.preview.img2.label">Vehicle ESP + Weapon ESP</span>
           </div>
         </div>
 
         <div style="text-align:center; margin-top: 40px;">
-          <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer" id="buy-preview-cta">
+          <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer" id="buy-preview-cta" data-i18n="buy.preview.cta">
             ⚡ Purchase Now — Get Instant Access
           </a>
         </div>
@@ -396,68 +432,68 @@
     <!-- ════════════════════════════════════════════════════════
          7. FAQ
     ══════════════════════════════════════════════════════════ -->
-    <section id="faq" class="section" aria-label="Frequently asked questions">
+    <section id="faq" class="section" aria-label="Frequently asked questions" data-i18n-aria-label="buy.faq.aria">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">FAQ</span>
-          <h2>Frequently Asked Questions</h2>
-          <p>Everything you need to know about our Delta Force cheats for PC before purchasing.</p>
+          <span class="eyebrow" data-i18n="buy.faq.eyebrow">FAQ</span>
+          <h2 data-i18n="buy.faq.title">Frequently Asked Questions</h2>
+          <p data-i18n="buy.faq.lead">Everything you need to know about our Delta Force cheats for PC before purchasing.</p>
         </div>
 
         <div class="faq" role="list">
 
           <details class="faq-item" id="faq-undetected" role="listitem">
-            <summary>Are these Delta Force cheats undetected?</summary>
-            <div class="faq-answer">
+            <summary data-i18n="buy.faq.1.q">Are these Delta Force cheats undetected?</summary>
+            <div class="faq-answer" data-i18n="buy.faq.1.a">
               Yes. Our Delta Force hack includes a full Ricochet anti-cheat bypass that is tested and verified after every game update. Our team pushes updated bypasses within 2–4 hours of any Delta Force patch, ensuring your cheat stays undetected at all times.
             </div>
           </details>
 
           <details class="faq-item" id="faq-dma" role="listitem">
-            <summary>What is Delta Force DMA and do I need it?</summary>
-            <div class="faq-answer">
+            <summary data-i18n="buy.faq.2.q">What is Delta Force DMA and do I need it?</summary>
+            <div class="faq-answer" data-i18n="buy.faq.2.a">
               DMA (Direct Memory Access) is an external, hardware-based method to run cheats completely outside the game process. This makes them significantly harder for anti-cheat systems to detect. CLOUD-DMA option and AWS option are both available for the most secure, cloud-based DMA setup.
             </div>
           </details>
 
           <details class="faq-item" id="faq-delivery" role="listitem">
-            <summary>How quickly will I receive access after purchasing?</summary>
-            <div class="faq-answer">
+            <summary data-i18n="buy.faq.3.q">How quickly will I receive access after purchasing?</summary>
+            <div class="faq-answer" data-i18n="buy.faq.3.a">
               Access is delivered instantly after payment. Once your purchase is confirmed, you will receive login credentials to download the loader and inject the cheat within minutes. Our quick-load injection system gets you in-game in under 60 seconds.
             </div>
           </details>
 
           <details class="faq-item" id="faq-stream-proof" role="listitem">
-            <summary>Does the Delta Force hack work with stream-proof overlay?</summary>
-            <div class="faq-answer">
+            <summary data-i18n="buy.faq.4.q">Does the Delta Force hack work with stream-proof overlay?</summary>
+            <div class="faq-answer" data-i18n="buy.faq.4.a">
               Yes. Our stream-proof overlay is completely invisible to OBS, Discord screen share, Twitch Studio, and all major broadcasting software. You can stream your Delta Force gameplay without any cheat elements appearing on your stream or recordings.
             </div>
           </details>
 
           <details class="faq-item" id="faq-monthly-vs-lifetime" role="listitem">
-            <summary>What is the difference between Monthly and Lifetime plans?</summary>
-            <div class="faq-answer">
+            <summary data-i18n="buy.faq.5.q">What is the difference between Monthly and Lifetime plans?</summary>
+            <div class="faq-answer" data-i18n="buy.faq.5.a">
               Both plans include the full, identical feature set — every cheat feature is available on both. The Monthly plan ($35/month) gives you 31 days of access per billing cycle. The Lifetime plan ($150 once) provides permanent, unlimited access with all future updates and season patches included at no additional cost.
             </div>
           </details>
 
           <details class="faq-item" id="faq-sys-req" role="listitem">
-            <summary>What are the system requirements for Delta Force cheats?</summary>
-            <div class="faq-answer">
+            <summary data-i18n="buy.faq.6.q">What are the system requirements for Delta Force cheats?</summary>
+            <div class="faq-answer" data-i18n="buy.faq.6.a">
               Requirements: HVCI ON, Core Isolation ON, TPM ON, Secure Boot ON. CLOUD-DMA option and AWS option are available. The cheat is compatible with Windows 10 and Windows 11 (64-bit). Full setup instructions are available in our Guide page after purchase.
             </div>
           </details>
 
           <details class="faq-item" id="faq-free" role="listitem">
-            <summary>Are there free Delta Force cheats available?</summary>
-            <div class="faq-answer">
+            <summary data-i18n="buy.faq.7.q">Are there free Delta Force cheats available?</summary>
+            <div class="faq-answer" data-i18n="buy.faq.7.a">
               Free delta force cheats available online are typically outdated, undetected for only days, or outright malware. We do not offer a free version. Our paid Delta Force cheat software is regularly updated, fully tested, and actively supported — giving you the safest and most reliable experience possible.
             </div>
           </details>
 
           <details class="faq-item" id="faq-update" role="listitem">
-            <summary>How often is the Delta Force hack updated?</summary>
-            <div class="faq-answer">
+            <summary data-i18n="buy.faq.8.q">How often is the Delta Force hack updated?</summary>
+            <div class="faq-answer" data-i18n="buy.faq.8.a">
               We push updates with every Delta Force game patch. Our standard update window is 2–4 hours after a patch goes live. For major season updates, updates may take slightly longer but are always delivered as fast as possible. All active subscribers receive updates automatically.
             </div>
           </details>
@@ -469,36 +505,36 @@
     <!-- ════════════════════════════════════════════════════════
          8. INTERNAL LINKS / EXPLORE
     ══════════════════════════════════════════════════════════ -->
-    <section id="explore" class="section section--card" aria-label="Explore more pages">
+    <section id="explore" class="section section--card" aria-label="Explore more pages" data-i18n-aria-label="buy.explore.aria">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Explore</span>
-          <h2>More Delta Force Resources</h2>
-          <p>Everything you need to get the most out of our Delta Force cheat software.</p>
+          <span class="eyebrow" data-i18n="buy.explore.eyebrow">Explore</span>
+          <h2 data-i18n="buy.explore.title">More Delta Force Resources</h2>
+          <p data-i18n="buy.explore.lead">Everything you need to get the most out of our Delta Force cheat software.</p>
         </div>
 
         <div class="internal-links-grid">
 
           <a href="/index.html" class="internal-link-card" id="explore-home-link">
             <div class="internal-link-card-text">
-              <h3>Home Page</h3>
-              <p>Overview of all Delta Force cheat features and player reviews</p>
+              <h3 data-i18n="buy.explore.home.title">Home Page</h3>
+              <p data-i18n="buy.explore.home.body">Overview of all Delta Force cheat features and player reviews</p>
             </div>
             <span class="internal-link-arrow" aria-hidden="true">→</span>
           </a>
 
           <a href="/guide.html" class="internal-link-card" id="explore-guide-link">
             <div class="internal-link-card-text">
-              <h3>Setup Guide</h3>
-              <p>Step-by-step installation guide for Delta Force hack + DMA setup</p>
+              <h3 data-i18n="buy.explore.guide.title">Setup Guide</h3>
+              <p data-i18n="buy.explore.guide.body">Step-by-step installation guide for Delta Force hack + DMA setup</p>
             </div>
             <span class="internal-link-arrow" aria-hidden="true">→</span>
           </a>
 
           <a href="/blog.html" class="internal-link-card" id="explore-blog-link">
             <div class="internal-link-card-text">
-              <h3>Blog &amp; Updates</h3>
-              <p>Latest patch notes, anti-cheat bypass status, and feature updates</p>
+              <h3 data-i18n="buy.explore.blog.title">Blog &amp; Updates</h3>
+              <p data-i18n="buy.explore.blog.body">Latest patch notes, anti-cheat bypass status, and feature updates</p>
             </div>
             <span class="internal-link-arrow" aria-hidden="true">→</span>
           </a>
@@ -519,11 +555,11 @@
         <!-- Brand Column -->
         <div class="footer-brand">
                     <a href="/" class="footer-brand-logo notranslate" id="footer-brand-link">
-            <img src="/assets/delta-force-logo.png" alt="Delta Force Cheats" class="footer-logo-img" loading="lazy">
+            <img src="/assets/delta-force-logo.png" alt="Delta Force Cheats" class="footer-logo-img" loading="lazy" data-i18n-alt="common.alt.deltaLogo">
           </a>
-          <p class="footer-tagline">Premium Delta Force cheat software with aimbot, ESP, DMA support, and anti-cheat bypass. Updated every season. Trusted by 10,000+ players.</p>
-          <nav class="footer-social" aria-label="Zadeyo on social media">
-            <a href="https://discord.gg/35TJN2BnvZ" aria-label="Zadeyo on Discord" id="footer-discord-link" target="_blank" rel="noopener noreferrer">
+          <p class="footer-tagline" data-i18n="common.footer.tagline">Premium Delta Force cheat software with aimbot, ESP, DMA support, and anti-cheat bypass. Updated every season. Trusted by 10,000+ players.</p>
+          <nav class="footer-social" aria-label="Zadeyo on social media" data-i18n-aria-label="common.aria.social">
+            <a href="https://discord.gg/35TJN2BnvZ" aria-label="Zadeyo on Discord" data-i18n-aria-label="common.aria.discord" id="footer-discord-link" target="_blank" rel="noopener noreferrer">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.197.373.291a.077.077 0 0 1-.006.128 12.3 12.3 0 0 1-1.873.892.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.876 19.876 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.028ZM8.02 15.278c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.955 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.946 2.419-2.157 2.419Z"/></svg>
             </a>
           </nav>
@@ -531,39 +567,39 @@
 
         <!-- Site Column -->
         <div class="footer-col">
-          <h4>Site</h4>
+          <h4 data-i18n="common.footer.col.site">Site</h4>
           <ul>
-            <li><a href="/" id="footer-home-link">Home</a></li>
-            <li><a href="/delta-force-cheats.html" id="footer-buy-link">Buy</a></li>
-            <li><a href="/blog.html" id="footer-blog-link">Blog</a></li>
-            <li><a href="/guide.html" id="footer-guide-link">Guide</a></li>
+            <li><a href="/" id="footer-home-link" data-i18n="nav.home">Home</a></li>
+            <li><a href="/delta-force-cheats.html" id="footer-buy-link" data-i18n="nav.buy">Buy</a></li>
+            <li><a href="/blog.html" id="footer-blog-link" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/guide.html" id="footer-guide-link" data-i18n="nav.guide">Guide</a></li>
           </ul>
         </div>
 
         <!-- Store Column -->
         <div class="footer-col">
-          <h4>Store</h4>
+          <h4 data-i18n="common.footer.col.store">Store</h4>
           <ul>
-            <li><a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" target="_blank" rel="noopener noreferrer" id="footer-store-main-link">Buy Delta Force Cheat</a></li>
-            <li><a href="https://zadeyo.com" target="_blank" rel="noopener noreferrer" id="footer-store-link">Zadeyo Store</a></li>
+            <li><a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" target="_blank" rel="noopener noreferrer" id="footer-store-main-link" data-i18n="common.footer.link.buyCheat">Buy Delta Force Cheat</a></li>
+            <li><a href="https://zadeyo.com" target="_blank" rel="noopener noreferrer" id="footer-store-link" data-i18n="common.footer.link.store">Zadeyo Store</a></li>
           </ul>
         </div>
 
         <!-- Support Column -->
         <div class="footer-col">
-          <h4>Support</h4>
+          <h4 data-i18n="common.footer.col.support">Support</h4>
           <ul>
-            <li><a href="https://discord.gg/35TJN2BnvZ" target="_blank" rel="noopener noreferrer" id="footer-support-discord-link">Discord Support</a></li>
+            <li><a href="https://discord.gg/35TJN2BnvZ" target="_blank" rel="noopener noreferrer" id="footer-support-discord-link" data-i18n="common.footer.link.discordSupport">Discord Support</a></li>
           </ul>
         </div>
 
         <!-- Help Us Grow Column -->
         <div class="footer-col">
-          <h4>Help Us Grow</h4>
+          <h4 data-i18n="common.footer.col.helpGrow">Help Us Grow</h4>
           <ul>
-            <li><a href="https://twitter.com/intent/tweet?text=Delta%20Force%20Cheats%20ESP%20%26%20Aimbot%20https%3A%2F%2Fnovax.gg%2F" target="_blank" rel="noopener noreferrer" id="footer-share-twitter-link">Share on X / Twitter</a></li>
-            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnovax.gg%2F" target="_blank" rel="noopener noreferrer" id="footer-share-fb-link">Share on Facebook</a></li>
-            <li><a href="https://www.reddit.com/submit?url=https%3A%2F%2Fnovax.gg%2F&title=Delta%20Force%20Cheats%20ESP%20%26%20Aimbot" target="_blank" rel="noopener noreferrer" id="footer-share-reddit-link">Share on Reddit</a></li>
+            <li><a href="https://twitter.com/intent/tweet?text=Delta%20Force%20Cheats%20ESP%20%26%20Aimbot%20https%3A%2F%2Fnovax.gg%2F" target="_blank" rel="noopener noreferrer" id="footer-share-twitter-link" data-i18n="common.footer.link.shareX">Share on X / Twitter</a></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnovax.gg%2F" target="_blank" rel="noopener noreferrer" id="footer-share-fb-link" data-i18n="common.footer.link.shareFb">Share on Facebook</a></li>
+            <li><a href="https://www.reddit.com/submit?url=https%3A%2F%2Fnovax.gg%2F&title=Delta%20Force%20Cheats%20ESP%20%26%20Aimbot" target="_blank" rel="noopener noreferrer" id="footer-share-reddit-link" data-i18n="common.footer.link.shareReddit">Share on Reddit</a></li>
           </ul>
         </div>
 
@@ -573,18 +609,19 @@
 
       <div class="footer-bottom">
         <div class="footer-legal-links">
-          <a href="#" id="footer-privacy-link">Privacy Policy</a>
-          <a href="#" id="footer-terms-link">Terms of Service</a>
-          <span>Not affiliated with any game developer.</span>
+          <a href="#" id="footer-privacy-link" data-i18n="common.footer.link.privacy">Privacy Policy</a>
+          <a href="#" id="footer-terms-link" data-i18n="common.footer.link.terms">Terms of Service</a>
+          <span data-i18n="common.footer.disclaimerShort">Not affiliated with any game developer.</span>
         </div>
-        <span class="footer-copyright">&copy; 2026 Zadeyo. All rights reserved.</span>
+        <span class="footer-copyright" data-i18n="common.footer.copyright">&copy; 2026 Zadeyo. All rights reserved.</span>
       </div>
 
-      <p class="disclaimer">This software is provided for entertainment purposes only. Using cheat software on official servers may violate the game&rsquo;s terms of service and can result in an account ban. Use responsibly.</p>
+      <p class="disclaimer" data-i18n="common.footer.disclaimer">This software is provided for entertainment purposes only. Using cheat software on official servers may violate the game&rsquo;s terms of service and can result in an account ban. Use responsibly.</p>
     </div>
   </footer>
 
   <!-- JS -->
+  <script src="/js/i18n.js" defer></script>
   <script src="/js/main.js" defer></script>
 
 </body>

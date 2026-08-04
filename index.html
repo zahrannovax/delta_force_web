@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-title-key="home.seo.title">
 
 <head>
   <meta charset="UTF-8">
@@ -35,7 +35,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=8">
+  <link rel="stylesheet" href="/css/style.css?v=9">
 
   <!-- JSON-LD: Organization + Website -->
   <script type="application/ld+json">
@@ -63,6 +63,16 @@
 
   <!-- Lenis Smooth Scroll -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <!-- Early lang/dir to avoid RTL flash -->
+  <script>
+    (function () {
+      try {
+        var l = localStorage.getItem('df_lang') || 'en';
+        document.documentElement.lang = l;
+        document.documentElement.dir = (l === 'ar' || l === 'ur') ? 'rtl' : 'ltr';
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
 </head>
 
 <body>
@@ -70,44 +80,72 @@
   <!-- ══════════════════════════════════════════════════════════
        1. TOP STRIP
   ════════════════════════════════════════════════════════════ -->
-  <div class="top-strip" role="banner" aria-label="Announcement">
-    🔥 Season-synced updates guaranteed — stay undetected every patch.
+  <div class="top-strip" role="banner" aria-label="Announcement" data-i18n-aria-label="common.aria.announcement">
+    <span data-i18n="home.strip.text">🔥 Season-synced updates guaranteed — stay undetected every patch.</span>
     <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" target="_blank" rel="noopener noreferrer"
-      id="strip-cta-link">Get Access Now →</a>
+      id="strip-cta-link" data-i18n="common.strip.cta.getAccess">Get Access Now →</a>
   </div>
 
   <!-- ══════════════════════════════════════════════════════════
        2. NAVBAR
   ════════════════════════════════════════════════════════════ -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
+  <nav class="navbar" role="navigation" aria-label="Main navigation" data-i18n-aria-label="common.aria.mainNav">
     <div class="container navbar-inner">
-      <a class="navbar-logo" href="/index.html" aria-label="Home">
-        <img src="/assets/zadeyo-logo.webp" alt="Website Logo" width="120" height="32" fetchpriority="high">
+      <a class="navbar-logo" href="/index.html" aria-label="Home" data-i18n-aria-label="common.aria.home">
+        <img src="/assets/zadeyo-logo.webp" alt="Website Logo" width="120" height="32" fetchpriority="high" data-i18n-alt="common.alt.logo">
       </a>
       <div class="navbar-links" role="menubar">
-        <a href="/index.html" role="menuitem" id="nav-home">Home</a>
-        <a href="/delta-force-cheats.html" role="menuitem" id="nav-buy">Buy</a>
-        <a href="/blog.html" role="menuitem" id="nav-blog">Blog</a>
-        <a href="/guide.html" role="menuitem" id="nav-guide">Guide</a>
+        <a href="/index.html" role="menuitem" id="nav-home" data-i18n="nav.home">Home</a>
+        <a href="/delta-force-cheats.html" role="menuitem" id="nav-buy" data-i18n="nav.buy">Buy</a>
+        <a href="/blog.html" role="menuitem" id="nav-blog" data-i18n="nav.blog">Blog</a>
+        <a href="/guide.html" role="menuitem" id="nav-guide" data-i18n="nav.guide">Guide</a>
       </div>
-      <div class="navbar-cta">
-        <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank"
-          rel="noopener noreferrer" id="nav-cta-btn">Buy Now</a>
+      <div class="navbar-actions">
+        <div class="lang-switcher" id="lang-switcher">
+          <button type="button" class="lang-trigger" id="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language" data-i18n-aria-label="common.aria.selectLanguage">
+            <span id="lang-current-label">English</span>
+            <svg class="lang-trigger-chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="lang-menu" role="listbox" aria-label="Languages" data-i18n-aria-label="common.aria.languages">
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="en" aria-selected="true">English</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="tr" aria-selected="false">Türkçe</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ar" aria-selected="false">العربية</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="de" aria-selected="false">Deutsch</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="fr" aria-selected="false">Français</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="es" aria-selected="false">Español</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="pt" aria-selected="false">Português</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ru" aria-selected="false">Русский</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ja" aria-selected="false">日本語</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="zh" aria-selected="false">中文</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="hi" aria-selected="false">हिन्दी</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="ur" aria-selected="false">اردو</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="id" aria-selected="false">Bahasa Indonesia</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="pl" aria-selected="false">Polski</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="nl" aria-selected="false">Nederlands</button></li>
+            <li role="none"><button type="button" class="lang-option" role="option" data-lang="it" aria-selected="false">Italiano</button></li>
+          </ul>
+        </div>
+        <div class="navbar-cta">
+          <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank"
+            rel="noopener noreferrer" id="nav-cta-btn" data-i18n="nav.cta">Buy Now</a>
+        </div>
+        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" id="hamburger-btn" data-i18n-aria-label="common.aria.toggleMenu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" id="hamburger-btn">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
   <!-- Mobile Nav Overlay -->
-  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation" id="mobile-nav">
-    <a href="/index.html">Home</a>
-    <a href="/delta-force-cheats.html">Buy</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/guide.html">Guide</a>
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation" id="mobile-nav" data-i18n-aria-label="common.aria.mobileNav">
+    <a href="/index.html" data-i18n="nav.home">Home</a>
+    <a href="/delta-force-cheats.html" data-i18n="nav.buy">Buy</a>
+    <a href="/blog.html" data-i18n="nav.blog">Blog</a>
+    <a href="/guide.html" data-i18n="nav.guide">Guide</a>
     <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank"
-      rel="noopener noreferrer" id="mobile-buy-btn">Buy Now</a>
+      rel="noopener noreferrer" id="mobile-buy-btn" data-i18n="nav.cta">Buy Now</a>
   </div>
 
   <main>
@@ -115,26 +153,26 @@
     <!-- ════════════════════════════════════════════════════════
          3. HERO SECTION
     ══════════════════════════════════════════════════════════ -->
-    <section class="showcase-outer" aria-label="Hero">
+    <section class="showcase-outer" aria-label="Hero" data-i18n-aria-label="home.hero.aria">
       <div class="showcase-panel hero-panel">
         <!-- Background image layer -->
         <div class="hero-bg" aria-hidden="true">
           <picture>
             <source media="(max-width: 768px)" srcset="/assets/hero-bg.webp" type="image/webp">
             <img src="/assets/hero-bg.webp" alt="Delta Force tactical battlefield scene" fetchpriority="high"
-              decoding="async" width="1500" height="844">
+              decoding="async" width="1500" height="844" data-i18n-alt="home.hero.bgAlt">
           </picture>
         </div>
 
         <div class="container hero-panel-content">
-          <span class="hero-eyebrow">Delta Force Cheat Software</span>
+          <span class="hero-eyebrow" data-i18n="home.hero.eyebrow">Delta Force Cheat Software</span>
 
           <h1>
-            Best Delta Force Cheats &amp; Hacks
-            <span class="accent">Latest 2026</span>
+            <span data-i18n="home.hero.title">Best Delta Force Cheats &amp; Hacks</span>
+            <span class="accent" data-i18n="home.hero.titleAccent">Latest 2026</span>
           </h1>
 
-          <p class="hero-lead">
+          <p class="hero-lead" data-i18n="home.hero.lead">
             Gain an unbeatable edge in every Delta Force match with our Latest 2026 Delta Force cheats software.
             Advanced aimbot prediction, full ESP suite, cloud DMA support, and stream-proof overlay —
             all updated with every game season.
@@ -142,28 +180,28 @@
 
           <div class="hero-ctas">
             <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary btn-lg"
-              target="_blank" rel="noopener noreferrer" id="hero-download-btn">
+              target="_blank" rel="noopener noreferrer" id="hero-download-btn" data-i18n="home.hero.ctaPrimary">
               Download Cheats Now
             </a>
-            <a href="#features-overview" class="btn btn-secondary btn-lg" id="hero-features-btn">
+            <a href="#features-overview" class="btn btn-secondary btn-lg" id="hero-features-btn" data-i18n="home.hero.ctaSecondary">
               See All Features
             </a>
           </div>
 
           <div class="hero-stats">
             <div class="hero-stat">
-              <span class="hero-stat-num">10,000+</span>
-              <span class="hero-stat-label">Active Players Using Our Cheat</span>
+              <span class="hero-stat-num" data-i18n="home.hero.stat1.num">10,000+</span>
+              <span class="hero-stat-label" data-i18n="home.hero.stat1.label">Active Players Using Our Cheat</span>
             </div>
             <div class="hero-stat-divider" aria-hidden="true"></div>
             <div class="hero-stat">
-              <span class="hero-stat-num">2–4h</span>
-              <span class="hero-stat-label">Typical Patch Update Window</span>
+              <span class="hero-stat-num" data-i18n="home.hero.stat2.num">2–4h</span>
+              <span class="hero-stat-label" data-i18n="home.hero.stat2.label">Typical Patch Update Window</span>
             </div>
             <div class="hero-stat-divider" aria-hidden="true"></div>
             <div class="hero-stat">
-              <span class="hero-stat-num">24/7</span>
-              <span class="hero-stat-label">Live Support Available</span>
+              <span class="hero-stat-num" data-i18n="home.hero.stat3.num">24/7</span>
+              <span class="hero-stat-label" data-i18n="home.hero.stat3.label">Live Support Available</span>
             </div>
           </div>
         </div>
@@ -173,12 +211,12 @@
     <!-- ════════════════════════════════════════════════════════
          4. HACK PREVIEW SCREENSHOTS
     ══════════════════════════════════════════════════════════ -->
-    <section id="preview-images" class="section" aria-label="Hack preview screenshots">
+    <section id="preview-images" class="section" aria-label="Hack preview screenshots" data-i18n-aria-label="home.preview.aria">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">In-Game Screenshots</span>
-          <h2>See It In Action</h2>
-          <p>Real screenshots captured in live Delta Force matches using our cheat software. Player ESP overlays, aimbot
+          <span class="eyebrow" data-i18n="home.preview.eyebrow">In-Game Screenshots</span>
+          <h2 data-i18n="home.preview.title">See It In Action</h2>
+          <p data-i18n="home.preview.lead">Real screenshots captured in live Delta Force matches using our cheat software. Player ESP overlays, aimbot
             lock-on with prediction, and full feature visibility.</p>
         </div>
 
@@ -186,21 +224,21 @@
 
         <!-- Video showcase -->
         <div class="video-showcase mt-32">
-          <div class="kinetic-player" id="kinetic-player" aria-label="Delta Force gameplay demo">
+          <div class="kinetic-player" id="kinetic-player" aria-label="Delta Force gameplay demo" data-i18n-aria-label="home.preview.videoAria">
 
             <video id="gameplay-video" src="/assets/Delta-Clip-compressed.mp4" playsinline preload="metadata"
-              aria-label="Gameplay demo"></video>
+              aria-label="Gameplay demo" data-i18n-aria-label="home.preview.videoLabel"></video>
 
             <!-- Kinetic Title Overlay -->
-            <div class="kinetic-overlay" id="kinetic-overlay" role="button" tabindex="0" aria-label="Play video">
+            <div class="kinetic-overlay" id="kinetic-overlay" role="button" tabindex="0" aria-label="Play video" data-i18n-aria-label="home.preview.playOverlay">
               <!-- Glow blooms -->
               <div class="kinetic-bloom kinetic-bloom-1"></div>
               <div class="kinetic-bloom kinetic-bloom-2"></div>
 
               <!-- Title lockup -->
               <div class="kinetic-title-lockup">
-                <div class="kinetic-title-primary">DELTA FORCE</div>
-                <div class="kinetic-title-secondary">Undetected Hack</div>
+                <div class="kinetic-title-primary" data-i18n="home.preview.kineticPrimary">DELTA FORCE</div>
+                <div class="kinetic-title-secondary" data-i18n="home.preview.kineticSecondary">Undetected Hack</div>
               </div>
             </div>
 
@@ -208,9 +246,9 @@
             <div class="kinetic-scrim" aria-hidden="true"></div>
 
             <!-- Controls Bar -->
-            <div class="kinetic-controls" id="kinetic-controls" role="toolbar" aria-label="Video controls">
+            <div class="kinetic-controls" id="kinetic-controls" role="toolbar" aria-label="Video controls" data-i18n-aria-label="home.preview.controlsAria">
               <div class="kctrl-left">
-                <button class="kbtn" id="kbtn-play" aria-label="Play">
+                <button class="kbtn" id="kbtn-play" aria-label="Play" data-i18n-aria-label="home.preview.ariaPlay">
                   <svg id="ksvg-play" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M8 5v14l11-7z" />
                   </svg>
@@ -226,12 +264,12 @@
                   <div class="k-progress-track"></div>
                   <div class="k-progress-fill" id="k-progress-fill"></div>
                   <input type="range" class="k-progress-input" id="k-progress-input" min="0" max="100" value="0"
-                    step="0.1" aria-label="Seek">
+                    step="0.1" aria-label="Seek" data-i18n-aria-label="home.preview.ariaSeek">
                 </div>
               </div>
 
               <div class="kctrl-right">
-                <button class="kbtn" id="kbtn-mute" aria-label="Unmute">
+                <button class="kbtn" id="kbtn-mute" aria-label="Unmute" data-i18n-aria-label="home.preview.ariaUnmute">
                   <svg id="ksvg-mute" viewBox="0 0 24 24" fill="currentColor">
                     <path
                       d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
@@ -241,7 +279,7 @@
                       d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
                   </svg>
                 </button>
-                <button class="kbtn" id="kbtn-fs" aria-label="Fullscreen">
+                <button class="kbtn" id="kbtn-fs" aria-label="Fullscreen" data-i18n-aria-label="home.preview.ariaFullscreen">
                   <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
                   </svg>
@@ -256,38 +294,38 @@
     <!-- ════════════════════════════════════════════════════════
          5. WHY CHOOSE US
     ══════════════════════════════════════════════════════════ -->
-    <section id="why-choose-us" class="section section--card" aria-label="Why choose us">
+    <section id="why-choose-us" class="section section--card" aria-label="Why choose us" data-i18n-aria-label="home.why.aria">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Why Players Choose Us</span>
-          <h2>The #1 Delta Force Hack Platform</h2>
-          <p>Thousands of Delta Force players trust our cheat software for undetected gameplay, instant updates, and
+          <span class="eyebrow" data-i18n="home.why.eyebrow">Why Players Choose Us</span>
+          <h2 data-i18n="home.why.title">The #1 Delta Force Hack Platform</h2>
+          <p data-i18n="home.why.lead">Thousands of Delta Force players trust our cheat software for undetected gameplay, instant updates, and
             round-the-clock support.</p>
         </div>
 
         <div class="grid-4" role="list">
           <div class="card" role="listitem">
             <span class="card-icon" aria-hidden="true">🛡️</span>
-            <h3>Anti-Cheat Bypass</h3>
-            <p>Our Delta Force hack includes a full Ricochet anti-cheat bypass. Tested and confirmed safe after every
+            <h3 data-i18n="home.why.card1.title">Anti-Cheat Bypass</h3>
+            <p data-i18n="home.why.card1.body">Our Delta Force hack includes a full Ricochet anti-cheat bypass. Tested and confirmed safe after every
               patch cycle.</p>
           </div>
           <div class="card" role="listitem">
             <span class="card-icon" aria-hidden="true">⚡</span>
-            <h3>Fast Patch Updates</h3>
-            <p>When Delta Force updates, so do we. Our team pushes cheat updates within 2–4 hours so your access is
+            <h3 data-i18n="home.why.card2.title">Fast Patch Updates</h3>
+            <p data-i18n="home.why.card2.body">When Delta Force updates, so do we. Our team pushes cheat updates within 2–4 hours so your access is
               never interrupted.</p>
           </div>
           <div class="card" role="listitem">
             <span class="card-icon" aria-hidden="true">☁️</span>
-            <h3>CLOUD-DMA Support</h3>
-            <p>Run our Delta Force DMA cheat externally via CLOUD-DMA option or AWS option for the most secure,
+            <h3 data-i18n="home.why.card3.title">CLOUD-DMA Support</h3>
+            <p data-i18n="home.why.card3.body">Run our Delta Force DMA cheat externally via CLOUD-DMA option or AWS option for the most secure,
               undetectable setup possible.</p>
           </div>
           <div class="card" role="listitem">
             <span class="card-icon" aria-hidden="true">🎮</span>
-            <h3>Stream-Proof Overlay</h3>
-            <p>Our stream-proof overlay is invisible to OBS, Discord, and all major broadcasting software — stream
+            <h3 data-i18n="home.why.card4.title">Stream-Proof Overlay</h3>
+            <p data-i18n="home.why.card4.body">Our stream-proof overlay is invisible to OBS, Discord, and all major broadcasting software — stream
               safely without exposure.</p>
           </div>
         </div>
@@ -297,12 +335,12 @@
     <!-- ════════════════════════════════════════════════════════
          6. PRODUCT TYPES / PACKAGES
     ══════════════════════════════════════════════════════════ -->
-    <section id="features-overview" class="section" aria-label="Product types and packages">
+    <section id="features-overview" class="section" aria-label="Product types and packages" data-i18n-aria-label="home.features.aria">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Cheat Features</span>
-          <h2>Everything You Need to Dominate</h2>
-          <p>Our Delta Force cheat for PC packs a full suite of precision tools. Every feature listed is live and active
+          <span class="eyebrow" data-i18n="home.features.eyebrow">Cheat Features</span>
+          <h2 data-i18n="home.features.title">Everything You Need to Dominate</h2>
+          <p data-i18n="home.features.lead">Our Delta Force cheat for PC packs a full suite of precision tools. Every feature listed is live and active
             in the current build.</p>
         </div>
 
@@ -311,75 +349,75 @@
           <div class="tilt-card" role="listitem">
             <span class="tilt-card-glow" aria-hidden="true"></span>
             <span class="card-icon" aria-hidden="true">🎯</span>
-            <h3>Advanced Aimbot</h3>
-            <p>Bone-targeted aimbot with full trajectory prediction. Lock on through smoke, walls, and vehicle cover
+            <h3 data-i18n="home.features.aimbot.title">Advanced Aimbot</h3>
+            <p data-i18n="home.features.aimbot.body">Bone-targeted aimbot with full trajectory prediction. Lock on through smoke, walls, and vehicle cover
               with pinpoint accuracy. Aim FOV customization included.</p>
             <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="card-link" target="_blank"
-              rel="noopener noreferrer" id="pkg-aimbot-link">Get Access →</a>
+              rel="noopener noreferrer" id="pkg-aimbot-link" data-i18n="common.cta.getAccess">Get Access →</a>
           </div>
 
           <div class="tilt-card" role="listitem">
             <span class="tilt-card-glow" aria-hidden="true"></span>
             <span class="card-icon" aria-hidden="true">👁️</span>
-            <h3>Player ESP</h3>
-            <p>Full player ESP with class identification. See enemies through walls with health bars, name tags,
+            <h3 data-i18n="home.features.esp.title">Player ESP</h3>
+            <p data-i18n="home.features.esp.body">Full player ESP with class identification. See enemies through walls with health bars, name tags,
               distance, and class role displayed.</p>
             <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="card-link" target="_blank"
-              rel="noopener noreferrer" id="pkg-esp-link">Get Access →</a>
+              rel="noopener noreferrer" id="pkg-esp-link" data-i18n="common.cta.getAccess">Get Access →</a>
           </div>
 
           <div class="tilt-card" role="listitem">
             <span class="tilt-card-glow" aria-hidden="true"></span>
             <span class="card-icon" aria-hidden="true">🔫</span>
-            <h3>Weapon &amp; Gadget ESP</h3>
-            <p>See every weapon on the map with full attachment details. Locate intel, gear, and gadgets with our
+            <h3 data-i18n="home.features.weapon.title">Weapon &amp; Gadget ESP</h3>
+            <p data-i18n="home.features.weapon.body">See every weapon on the map with full attachment details. Locate intel, gear, and gadgets with our
               dedicated Gadget ESP module.</p>
             <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="card-link" target="_blank"
-              rel="noopener noreferrer" id="pkg-weapon-link">Get Access →</a>
+              rel="noopener noreferrer" id="pkg-weapon-link" data-i18n="common.cta.getAccess">Get Access →</a>
           </div>
 
           <div class="tilt-card" role="listitem">
             <span class="tilt-card-glow" aria-hidden="true"></span>
             <span class="card-icon" aria-hidden="true">🚁</span>
-            <h3>Vehicle ESP</h3>
-            <p>Track all vehicles on the map with spawn point detection. Know exactly when and where enemy vehicles will
+            <h3 data-i18n="home.features.vehicle.title">Vehicle ESP</h3>
+            <p data-i18n="home.features.vehicle.body">Track all vehicles on the map with spawn point detection. Know exactly when and where enemy vehicles will
               appear before they do.</p>
             <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="card-link" target="_blank"
-              rel="noopener noreferrer" id="pkg-vehicle-link">Get Access →</a>
+              rel="noopener noreferrer" id="pkg-vehicle-link" data-i18n="common.cta.getAccess">Get Access →</a>
           </div>
 
           <div class="tilt-card" role="listitem">
             <span class="tilt-card-glow" aria-hidden="true"></span>
             <span class="card-icon" aria-hidden="true">☁️</span>
-            <h3>CLOUD-DMA &amp; AWS</h3>
-            <p>CLOUD-DMA option and AWS option for the most secure Delta Force DMA setup. Run externally over cloud
+            <h3 data-i18n="home.features.dma.title">CLOUD-DMA &amp; AWS</h3>
+            <p data-i18n="home.features.dma.body">CLOUD-DMA option and AWS option for the most secure Delta Force DMA setup. Run externally over cloud
               infrastructure for hardware-level protection.</p>
             <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="card-link" target="_blank"
-              rel="noopener noreferrer" id="pkg-dma-link">Get Access →</a>
+              rel="noopener noreferrer" id="pkg-dma-link" data-i18n="common.cta.getAccess">Get Access →</a>
           </div>
 
           <div class="tilt-card" role="listitem">
             <span class="tilt-card-glow" aria-hidden="true"></span>
             <span class="card-icon" aria-hidden="true">⚙️</span>
-            <h3>No Recoil &amp; FOV Control</h3>
-            <p>Full no-recoil control system paired with customizable aim FOV. Dial in your aimbot radius and recoil
+            <h3 data-i18n="home.features.recoil.title">No Recoil &amp; FOV Control</h3>
+            <p data-i18n="home.features.recoil.body">Full no-recoil control system paired with customizable aim FOV. Dial in your aimbot radius and recoil
               compensation to your playstyle.</p>
             <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="card-link" target="_blank"
-              rel="noopener noreferrer" id="pkg-recoil-link">Get Access →</a>
+              rel="noopener noreferrer" id="pkg-recoil-link" data-i18n="common.cta.getAccess">Get Access →</a>
           </div>
 
         </div>
 
         <!-- Keyword Tags for SEO -->
-        <div class="keyword-tags" aria-label="Related search terms">
-          <span class="keyword-tag">delta force cheats</span>
-          <span class="keyword-tag">delta force hack</span>
-          <span class="keyword-tag">delta force aimbot</span>
-          <span class="keyword-tag">delta force dma</span>
-          <span class="keyword-tag">delta force cheats pc</span>
-          <span class="keyword-tag">cheats for delta force</span>
-          <span class="keyword-tag">delta force esp</span>
-          <span class="keyword-tag">delta force cheat software</span>
+        <div class="keyword-tags" aria-label="Related search terms" data-i18n-aria-label="home.features.tagsAria">
+          <span class="keyword-tag" data-i18n="home.features.tag1">delta force cheats</span>
+          <span class="keyword-tag" data-i18n="home.features.tag2">delta force hack</span>
+          <span class="keyword-tag" data-i18n="home.features.tag3">delta force aimbot</span>
+          <span class="keyword-tag" data-i18n="home.features.tag4">delta force dma</span>
+          <span class="keyword-tag" data-i18n="home.features.tag5">delta force cheats pc</span>
+          <span class="keyword-tag" data-i18n="home.features.tag6">cheats for delta force</span>
+          <span class="keyword-tag" data-i18n="home.features.tag7">delta force esp</span>
+          <span class="keyword-tag" data-i18n="home.features.tag8">delta force cheat software</span>
         </div>
       </div>
     </section>
@@ -387,49 +425,49 @@
     <!-- ════════════════════════════════════════════════════════
          7. GETTING STARTED
     ══════════════════════════════════════════════════════════ -->
-    <section id="getting-started" class="section" aria-label="Getting started guide">
+    <section id="getting-started" class="section" aria-label="Getting started guide" data-i18n-aria-label="home.steps.aria">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Quick Start</span>
-          <h2>Up and Running in Minutes</h2>
-          <p>Getting our Delta Force cheat installed is straightforward. Follow these three steps and you'll be
+          <span class="eyebrow" data-i18n="home.steps.eyebrow">Quick Start</span>
+          <h2 data-i18n="home.steps.title">Up and Running in Minutes</h2>
+          <p data-i18n="home.steps.lead">Getting our Delta Force cheat installed is straightforward. Follow these three steps and you'll be
             dominating lobbies within minutes.</p>
         </div>
 
         <div class="howto-steps" role="list">
           <div class="howto-step" role="listitem">
             <div class="step-icon-ring" aria-hidden="true">💳</div>
-            <h3>Purchase Access</h3>
-            <p>Choose your subscription plan — monthly or lifetime. Complete your purchase securely through our checkout
+            <h3 data-i18n="home.steps.1.title">Purchase Access</h3>
+            <p data-i18n="home.steps.1.body">Choose your subscription plan — monthly or lifetime. Complete your purchase securely through our checkout
               page.</p>
-            <span class="step-badge">Step 1</span>
+            <span class="step-badge" data-i18n="home.steps.1.badge">Step 1</span>
           </div>
           <div class="howto-step" role="listitem">
             <div class="step-icon-ring" aria-hidden="true">📥</div>
-            <h3>Download &amp; Inject</h3>
-            <p>Download the loader from your dashboard. Use the quick-load injection system — it takes under 60 seconds
+            <h3 data-i18n="home.steps.2.title">Download &amp; Inject</h3>
+            <p data-i18n="home.steps.2.body">Download the loader from your dashboard. Use the quick-load injection system — it takes under 60 seconds
               to activate.</p>
-            <span class="step-badge">Step 2</span>
+            <span class="step-badge" data-i18n="home.steps.2.badge">Step 2</span>
           </div>
           <div class="howto-step" role="listitem">
             <div class="step-icon-ring" aria-hidden="true">🎮</div>
-            <h3>Launch &amp; Dominate</h3>
-            <p>Open Delta Force and experience full aimbot, ESP, and DMA features from your very first match. Support is
+            <h3 data-i18n="home.steps.3.title">Launch &amp; Dominate</h3>
+            <p data-i18n="home.steps.3.body">Open Delta Force and experience full aimbot, ESP, and DMA features from your very first match. Support is
               always available.</p>
-            <span class="step-badge">Step 3</span>
+            <span class="step-badge" data-i18n="home.steps.3.badge">Step 3</span>
           </div>
         </div>
 
         <!-- System Requirements -->
-        <div class="sys-req-box mt-32 reveal" aria-label="System requirements">
-          <h3>⚙️ System Requirements</h3>
+        <div class="sys-req-box mt-32 reveal" aria-label="System requirements" data-i18n-aria-label="common.aria.sysReq">
+          <h3 data-i18n="common.sysReq.title">⚙️ System Requirements</h3>
           <div class="sys-req-list">
-            <div class="sys-req-item"><span class="req-dot"></span>HVCI — ON</div>
-            <div class="sys-req-item"><span class="req-dot"></span>Core Isolation — ON</div>
-            <div class="sys-req-item"><span class="req-dot"></span>TPM — ON</div>
-            <div class="sys-req-item"><span class="req-dot"></span>Secure Boot — ON</div>
-            <div class="sys-req-item"><span class="req-dot"></span>CLOUD-DMA option / AWS option available</div>
-            <div class="sys-req-item"><span class="req-dot"></span>Windows 10 / 11 (64-bit)</div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.hvci">HVCI — ON</span></div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.coreIsolation">Core Isolation — ON</span></div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.tpm">TPM — ON</span></div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.secureBoot">Secure Boot — ON</span></div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.dmaAws">CLOUD-DMA option / AWS option available</span></div>
+            <div class="sys-req-item"><span class="req-dot"></span><span data-i18n="common.sysReq.windows">Windows 10 / 11 (64-bit)</span></div>
           </div>
         </div>
       </div>
@@ -438,19 +476,19 @@
     <!-- ════════════════════════════════════════════════════════
          8. DISCORD SUPPORT CTA
     ══════════════════════════════════════════════════════════ -->
-    <section class="support-cta-section" aria-label="Discord support">
+    <section class="support-cta-section" aria-label="Discord support" data-i18n-aria-label="home.support.aria">
       <div class="container">
         <div class="support-cta-inner">
           <div class="support-cta-text">
-            <h2>24/7 Support — Always Here for You</h2>
-            <p>
+            <h2 data-i18n="home.support.title">24/7 Support — Always Here for You</h2>
+            <p data-i18n="home.support.body">
               Have questions about our Delta Force hack? Need help with setup, injection, or DMA configuration?
               Our support team is live around the clock on Discord to get you sorted fast.
             </p>
           </div>
           <div class="support-cta-actions">
             <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-discord btn-lg"
-              target="_blank" rel="noopener noreferrer" id="discord-support-btn">
+              target="_blank" rel="noopener noreferrer" id="discord-support-btn" data-i18n="home.support.cta">
               💬 Join Discord Support
             </a>
           </div>
@@ -461,118 +499,118 @@
     <!-- ════════════════════════════════════════════════════════
          9. CUSTOMER REVIEWS
     ══════════════════════════════════════════════════════════ -->
-    <section class="reviews-section" aria-label="Customer reviews">
+    <section class="reviews-section" aria-label="Customer reviews" data-i18n-aria-label="home.reviews.aria">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Verified Reviews</span>
-          <h2>What Players Are Saying</h2>
-          <p>Real feedback from real Delta Force players using our cheat software daily.</p>
+          <span class="eyebrow" data-i18n="home.reviews.eyebrow">Verified Reviews</span>
+          <h2 data-i18n="home.reviews.title">What Players Are Saying</h2>
+          <p data-i18n="home.reviews.lead">Real feedback from real Delta Force players using our cheat software daily.</p>
         </div>
       </div>
 
-      <div class="reviews-marquee-wrapper" aria-label="Customer review carousel" role="region">
+      <div class="reviews-marquee-wrapper" aria-label="Customer review carousel" role="region" data-i18n-aria-label="home.reviews.carouselAria">
         <div class="reviews-marquee" id="reviews-marquee">
 
           <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">"Best Delta Force hack I've used. The aimbot prediction on moving targets is insane.
+            <div class="review-stars" aria-label="5 out of 5 stars" data-i18n-aria-label="home.reviews.starsAria">★★★★★</div>
+            <p class="review-text" data-i18n="home.reviews.1.text">"Best Delta Force hack I've used. The aimbot prediction on moving targets is insane.
               Updated same day as the latest patch."</p>
             <div class="review-author">
               <div class="review-avatar" aria-hidden="true">XK</div>
               <div>
                 <div class="review-name">xKilo_</div>
-                <div class="review-time">2 days ago</div>
+                <div class="review-time" data-i18n="home.reviews.1.time">2 days ago</div>
               </div>
             </div>
           </article>
 
           <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">"Delta Force DMA setup was super easy to configure. Support walked me through every
+            <div class="review-stars" aria-label="5 out of 5 stars" data-i18n-aria-label="home.reviews.starsAria">★★★★★</div>
+            <p class="review-text" data-i18n="home.reviews.2.text">"Delta Force DMA setup was super easy to configure. Support walked me through every
               step. Never been detected in 3 months."</p>
             <div class="review-author">
               <div class="review-avatar" aria-hidden="true">SV</div>
               <div>
                 <div class="review-name">ShadowVault</div>
-                <div class="review-time">5 days ago</div>
+                <div class="review-time" data-i18n="home.reviews.2.time">5 days ago</div>
               </div>
             </div>
           </article>
 
           <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">"Player ESP with class identification is a game-changer. I always know who I'm
+            <div class="review-stars" aria-label="5 out of 5 stars" data-i18n-aria-label="home.reviews.starsAria">★★★★★</div>
+            <p class="review-text" data-i18n="home.reviews.3.text">"Player ESP with class identification is a game-changer. I always know who I'm
               fighting before they even see me. Worth every penny."</p>
             <div class="review-author">
               <div class="review-avatar" aria-hidden="true">NX</div>
               <div>
                 <div class="review-name">NorthernXile</div>
-                <div class="review-time">1 week ago</div>
+                <div class="review-time" data-i18n="home.reviews.3.time">1 week ago</div>
               </div>
             </div>
           </article>
 
           <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">"Stream-proof is flawless. I've been streaming Delta Force for months with this cheat
+            <div class="review-stars" aria-label="5 out of 5 stars" data-i18n-aria-label="home.reviews.starsAria">★★★★★</div>
+            <p class="review-text" data-i18n="home.reviews.4.text">"Stream-proof is flawless. I've been streaming Delta Force for months with this cheat
               running. Not a single viewer has noticed. 10/10."</p>
             <div class="review-author">
               <div class="review-avatar" aria-hidden="true">RP</div>
               <div>
                 <div class="review-name">ReaperPulse</div>
-                <div class="review-time">1 week ago</div>
+                <div class="review-time" data-i18n="home.reviews.4.time">1 week ago</div>
               </div>
             </div>
           </article>
 
           <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">"Got the lifetime plan and never looked back. Vehicle ESP and spawn tracking
+            <div class="review-stars" aria-label="5 out of 5 stars" data-i18n-aria-label="home.reviews.starsAria">★★★★★</div>
+            <p class="review-text" data-i18n="home.reviews.5.text">"Got the lifetime plan and never looked back. Vehicle ESP and spawn tracking
               completely flips the game in your favor on big maps."</p>
             <div class="review-author">
               <div class="review-avatar" aria-hidden="true">TW</div>
               <div>
                 <div class="review-name">TacticalWolf</div>
-                <div class="review-time">2 weeks ago</div>
+                <div class="review-time" data-i18n="home.reviews.5.time">2 weeks ago</div>
               </div>
             </div>
           </article>
 
           <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">"No recoil control system is buttery smooth. Combined with the aimbot FOV adjustment
+            <div class="review-stars" aria-label="5 out of 5 stars" data-i18n-aria-label="home.reviews.starsAria">★★★★★</div>
+            <p class="review-text" data-i18n="home.reviews.6.text">"No recoil control system is buttery smooth. Combined with the aimbot FOV adjustment
               it feels completely natural. Love it."</p>
             <div class="review-author">
               <div class="review-avatar" aria-hidden="true">GF</div>
               <div>
                 <div class="review-name">GhostFire99</div>
-                <div class="review-time">2 weeks ago</div>
+                <div class="review-time" data-i18n="home.reviews.6.time">2 weeks ago</div>
               </div>
             </div>
           </article>
 
           <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">"Quick injection system is surprisingly fast. Under a minute from loader to in-game
+            <div class="review-stars" aria-label="5 out of 5 stars" data-i18n-aria-label="home.reviews.starsAria">★★★★★</div>
+            <p class="review-text" data-i18n="home.reviews.7.text">"Quick injection system is surprisingly fast. Under a minute from loader to in-game
               with full features active. Zero crashes."</p>
             <div class="review-author">
               <div class="review-avatar" aria-hidden="true">DK</div>
               <div>
                 <div class="review-name">DeltaKing_X</div>
-                <div class="review-time">3 weeks ago</div>
+                <div class="review-time" data-i18n="home.reviews.7.time">3 weeks ago</div>
               </div>
             </div>
           </article>
 
           <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">"Gadget ESP is something I didn't know I needed. Finding intel drops and gear crates
+            <div class="review-stars" aria-label="5 out of 5 stars" data-i18n-aria-label="home.reviews.starsAria">★★★★★</div>
+            <p class="review-text" data-i18n="home.reviews.8.text">"Gadget ESP is something I didn't know I needed. Finding intel drops and gear crates
               before anyone else is such an edge. Great cheat."</p>
             <div class="review-author">
               <div class="review-avatar" aria-hidden="true">ZM</div>
               <div>
                 <div class="review-name">ZenithMage</div>
-                <div class="review-time">3 weeks ago</div>
+                <div class="review-time" data-i18n="home.reviews.8.time">3 weeks ago</div>
               </div>
             </div>
           </article>
@@ -584,34 +622,34 @@
     <!-- ════════════════════════════════════════════════════════
          10. LEARN MORE
     ══════════════════════════════════════════════════════════ -->
-    <section id="learn-more" class="section section--card" aria-label="Learn more resources">
+    <section id="learn-more" class="section section--card" aria-label="Learn more resources" data-i18n-aria-label="home.learn.aria">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Explore More</span>
-          <h2>Learn More About Delta Force Cheats</h2>
-          <p>Dive deeper into our guides, reviews, and setup documentation for Delta Force hack users.</p>
+          <span class="eyebrow" data-i18n="home.learn.eyebrow">Explore More</span>
+          <h2 data-i18n="home.learn.title">Learn More About Delta Force Cheats</h2>
+          <p data-i18n="home.learn.lead">Dive deeper into our guides, reviews, and setup documentation for Delta Force hack users.</p>
         </div>
 
         <div class="learn-more-grid">
           <a href="/guide.html" class="card" id="learn-setup-link"
             style="display:flex;flex-direction:column;gap:12px;text-decoration:none;">
             <span class="card-icon" aria-hidden="true">📖</span>
-            <h3>Setup Guide</h3>
-            <p>Step-by-step guide for installing and configuring our Delta Force cheat software, including DMA setup
+            <h3 data-i18n="home.learn.setup.title">Setup Guide</h3>
+            <p data-i18n="home.learn.setup.body">Step-by-step guide for installing and configuring our Delta Force cheat software, including DMA setup
               instructions.</p>
           </a>
           <a href="/blog.html" class="card" id="learn-blog-link"
             style="display:flex;flex-direction:column;gap:12px;text-decoration:none;">
             <span class="card-icon" aria-hidden="true">📰</span>
-            <h3>Blog &amp; Updates</h3>
-            <p>Stay up-to-date with patch notes, feature announcements, and anti-cheat bypass status updates for Delta
+            <h3 data-i18n="home.learn.blog.title">Blog &amp; Updates</h3>
+            <p data-i18n="home.learn.blog.body">Stay up-to-date with patch notes, feature announcements, and anti-cheat bypass status updates for Delta
               Force hacks.</p>
           </a>
           <a href="/delta-force-cheats.html" class="card" id="learn-buy-link"
             style="display:flex;flex-direction:column;gap:12px;text-decoration:none;">
             <span class="card-icon" aria-hidden="true">💰</span>
-            <h3>Pricing &amp; Plans</h3>
-            <p>View all pricing plans for Delta Force cheats for PC. Monthly and lifetime options available with full
+            <h3 data-i18n="home.learn.pricing.title">Pricing &amp; Plans</h3>
+            <p data-i18n="home.learn.pricing.body">View all pricing plans for Delta Force cheats for PC. Monthly and lifetime options available with full
               feature access.</p>
           </a>
         </div>
@@ -630,13 +668,13 @@
         <!-- Brand Column -->
         <div class="footer-brand">
           <a href="/" class="footer-brand-logo notranslate" id="footer-brand-link">
-            <img src="/assets/delta-force-logo.png" alt="Delta Force Cheats" class="footer-logo-img" loading="lazy">
+            <img src="/assets/delta-force-logo.png" alt="Delta Force Cheats" class="footer-logo-img" loading="lazy" data-i18n-alt="common.alt.deltaLogo">
           </a>
-          <p class="footer-tagline">Premium Delta Force cheat software with aimbot, ESP, DMA support, and anti-cheat
+          <p class="footer-tagline" data-i18n="common.footer.tagline">Premium Delta Force cheat software with aimbot, ESP, DMA support, and anti-cheat
             bypass. Updated every season. Trusted by 10,000+ players.</p>
-          <nav class="footer-social" aria-label="Zadeyo on social media">
+          <nav class="footer-social" aria-label="Zadeyo on social media" data-i18n-aria-label="common.aria.social">
             <a href="https://discord.gg/35TJN2BnvZ" aria-label="Zadeyo on Discord" id="footer-discord-link"
-              target="_blank" rel="noopener noreferrer">
+              target="_blank" rel="noopener noreferrer" data-i18n-aria-label="common.aria.discord">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.197.373.291a.077.077 0 0 1-.006.128 12.3 12.3 0 0 1-1.873.892.076.076 0 0 0-.04.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.876 19.876 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.028ZM8.02 15.278c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.955 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.094 2.157 2.418 0 1.334-.946 2.419-2.157 2.419Z" />
@@ -647,47 +685,47 @@
 
         <!-- Site Column -->
         <div class="footer-col">
-          <h4>Site</h4>
+          <h4 data-i18n="common.footer.col.site">Site</h4>
           <ul>
-            <li><a href="/" id="footer-home-link">Home</a></li>
-            <li><a href="/delta-force-cheats.html" id="footer-buy-link">Buy</a></li>
-            <li><a href="/blog.html" id="footer-blog-link">Blog</a></li>
-            <li><a href="/guide.html" id="footer-guide-link">Guide</a></li>
+            <li><a href="/" id="footer-home-link" data-i18n="nav.home">Home</a></li>
+            <li><a href="/delta-force-cheats.html" id="footer-buy-link" data-i18n="nav.buy">Buy</a></li>
+            <li><a href="/blog.html" id="footer-blog-link" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/guide.html" id="footer-guide-link" data-i18n="nav.guide">Guide</a></li>
           </ul>
         </div>
 
         <!-- Store Column -->
         <div class="footer-col">
-          <h4>Store</h4>
+          <h4 data-i18n="common.footer.col.store">Store</h4>
           <ul>
             <li><a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" target="_blank"
-                rel="noopener noreferrer" id="footer-store-main-link">Buy Delta Force Cheat</a></li>
-            <li><a href="https://zadeyo.com" target="_blank" rel="noopener noreferrer" id="footer-store-link">Zadeyo
+                rel="noopener noreferrer" id="footer-store-main-link" data-i18n="common.footer.link.buyCheat">Buy Delta Force Cheat</a></li>
+            <li><a href="https://zadeyo.com" target="_blank" rel="noopener noreferrer" id="footer-store-link" data-i18n="common.footer.link.store">Zadeyo
                 Store</a></li>
           </ul>
         </div>
 
         <!-- Support Column -->
         <div class="footer-col">
-          <h4>Support</h4>
+          <h4 data-i18n="common.footer.col.support">Support</h4>
           <ul>
             <li><a href="https://discord.gg/35TJN2BnvZ" target="_blank" rel="noopener noreferrer"
-                id="footer-support-discord-link">Discord Support</a></li>
+                id="footer-support-discord-link" data-i18n="common.footer.link.discordSupport">Discord Support</a></li>
           </ul>
         </div>
 
         <!-- Help Us Grow Column -->
         <div class="footer-col">
-          <h4>Help Us Grow</h4>
+          <h4 data-i18n="common.footer.col.helpGrow">Help Us Grow</h4>
           <ul>
             <li><a
                 href="https://twitter.com/intent/tweet?text=Delta%20Force%20Cheats%20ESP%20%26%20Aimbot%20https%3A%2F%2Fnovax.gg%2F"
-                target="_blank" rel="noopener noreferrer" id="footer-share-twitter-link">Share on X / Twitter</a></li>
+                target="_blank" rel="noopener noreferrer" id="footer-share-twitter-link" data-i18n="common.footer.link.shareX">Share on X / Twitter</a></li>
             <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnovax.gg%2F" target="_blank"
-                rel="noopener noreferrer" id="footer-share-fb-link">Share on Facebook</a></li>
+                rel="noopener noreferrer" id="footer-share-fb-link" data-i18n="common.footer.link.shareFb">Share on Facebook</a></li>
             <li><a
                 href="https://www.reddit.com/submit?url=https%3A%2F%2Fnovax.gg%2F&title=Delta%20Force%20Cheats%20ESP%20%26%20Aimbot"
-                target="_blank" rel="noopener noreferrer" id="footer-share-reddit-link">Share on Reddit</a></li>
+                target="_blank" rel="noopener noreferrer" id="footer-share-reddit-link" data-i18n="common.footer.link.shareReddit">Share on Reddit</a></li>
           </ul>
         </div>
 
@@ -697,19 +735,20 @@
 
       <div class="footer-bottom">
         <div class="footer-legal-links">
-          <a href="#" id="footer-privacy-link">Privacy Policy</a>
-          <a href="#" id="footer-terms-link">Terms of Service</a>
-          <span>Not affiliated with any game developer.</span>
+          <a href="#" id="footer-privacy-link" data-i18n="common.footer.link.privacy">Privacy Policy</a>
+          <a href="#" id="footer-terms-link" data-i18n="common.footer.link.terms">Terms of Service</a>
+          <span data-i18n="common.footer.disclaimerShort">Not affiliated with any game developer.</span>
         </div>
-        <span class="footer-copyright">&copy; 2026 Zadeyo. All rights reserved.</span>
+        <span class="footer-copyright" data-i18n="common.footer.copyright">&copy; 2026 Zadeyo. All rights reserved.</span>
       </div>
 
-      <p class="disclaimer">This software is provided for entertainment purposes only. Using cheat software on official
+      <p class="disclaimer" data-i18n="common.footer.disclaimer">This software is provided for entertainment purposes only. Using cheat software on official
         servers may violate the game&rsquo;s terms of service and can result in an account ban. Use responsibly.</p>
     </div>
   </footer>
 
   <!-- JS -->
+  <script src="/js/i18n.js" defer></script>
   <script src="/js/main.js?v=3" defer></script>
 
 </body>
