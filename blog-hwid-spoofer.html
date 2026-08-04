@@ -100,7 +100,7 @@
             <li>Windows / registry machine values</li>
             <li>TPM-related machine trust data on modern setups</li>
           </ul>
-          <p>One value alone is rarely the full ban. Modern systems combine many IDs into one hardware fingerprint. Delta Force’s ACE stack also pushes Secure Boot and TPM 2.0 for stronger machine checks and hardware-linked bans — so the fingerprint side matters more than it used to.</p>
+          <p>One value alone is rarely the full ban. Modern systems combine many IDs into one hardware fingerprint. Delta Force’s ACE stack also pushes Secure Boot and TPM 2.0 for stronger machine checks and hardware-linked bans — so the fingerprint side matters more than it used to. See <a href="/guide.html">how Delta Force anti-cheat works</a> for the ACE side.</p>
 
           <h2>What Is an HWID Spoofer?</h2>
           <p>An HWID spoofer changes the identifiers your system reports to the game and anti-cheat. It does not swap your real motherboard or SSD. It changes what software reads when it asks “what machine is this?”</p>
@@ -159,8 +159,8 @@
           <h2>HWID Spoofer and Delta Force Cheats</h2>
           <p>For Delta Force, think of the stack in layers:</p>
           <ul>
-            <li><strong>Cheat features</strong> — aimbot, ESP, recoil tools</li>
-            <li><strong>Delivery method</strong> — local injection or CLOUD-DMA on AWS</li>
+            <li><strong>Cheat features</strong> — <a href="/blog-aimbot-setup.html">aimbot</a>, <a href="/blog-esp-setup.html">ESP</a>, recoil tools</li>
+            <li><strong>Delivery method</strong> — local injection or <a href="/blog-cloud-dma-aws.html">CLOUD-DMA on AWS</a></li>
             <li><strong>Our HWID spoofer</strong> — machine identity reset after a hardware ban</li>
           </ul>
           <p>A spoofer does not replace CLOUD-DMA or aim settings. It solves a different problem: the PC fingerprint. Because our suite already includes the spoofer, you are not stuck after a hard ban — you recover the machine identity and keep using the same cheat tools.</p>
