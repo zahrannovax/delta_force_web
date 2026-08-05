@@ -349,7 +349,7 @@ select {
 }
 
 .navbar-logo img {
-  height: 28px;
+  height: 36px;
   width: auto;
   object-fit: contain;
 }
@@ -889,6 +889,7 @@ select {
 /* GETTING STARTED */
 #getting-started {
   text-align: center;
+  scroll-margin-top: 110px;
 }
 
 .getting-started-media,
@@ -1172,11 +1173,51 @@ select {
   color: var(--text-muted);
 }
 
-/* LEARN MORE SECTIONâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* LEARN MORE SECTION */
 .learn-more-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
+
+.learn-more-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.learn-more-card h3,
+.learn-more-card p {
+  color: inherit;
+}
+
+.learn-more-card p {
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.learn-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+  color: var(--accent-primary);
+  font-weight: 700;
+  font-size: 0.88rem;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.learn-more-card:hover .learn-card-cta {
+  color: #c084fc;
+  gap: 10px;
+}
+
+.learn-card-cta svg {
+  flex-shrink: 0;
 }
 
 /* FOOTERâ”€ */
