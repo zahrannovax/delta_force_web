@@ -50,6 +50,7 @@
     "common.sysReq.dmaAws":  "Доступны опции CLOUD-DMA / AWS",
     "common.sysReq.windows":  "Windows 10 / 11 (64-bit)",
     "common.cta.getAccess":  "Получить доступ →",
+    "common.cta.learnMoreAboutThis":  "Узнать больше →",
     "common.cta.downloadCheats":  "Скачать читы сейчас",
     "common.cta.seeFeatures":  "Смотреть все функции",
     "common.cta.readArticle":  "Читать статью",

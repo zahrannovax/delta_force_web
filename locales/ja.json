@@ -50,6 +50,7 @@
     "common.sysReq.dmaAws":  "CLOUD-DMAオプション / AWSオプション利用可能",
     "common.sysReq.windows":  "Windows 10 / 11（64ビット）",
     "common.cta.getAccess":  "アクセスを取得 →",
+    "common.cta.learnMoreAboutThis":  "詳しく見る →",
     "common.cta.downloadCheats":  "今すぐチートをダウンロード",
     "common.cta.seeFeatures":  "すべての機能を見る",
     "common.cta.readArticle":  "記事を読む",

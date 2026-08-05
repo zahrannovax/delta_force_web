@@ -886,12 +886,13 @@ select {
   gap: 10px;
 }
 
-/* GETTING STARTEDâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* GETTING STARTED */
 #getting-started {
   text-align: center;
 }
 
-.getting-started-media {
+.getting-started-media,
+.what-is-df-media {
   margin: 0 auto 40px;
   max-width: 900px;
   overflow: hidden;
@@ -901,12 +902,35 @@ select {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
-.getting-started-media img {
+.getting-started-media img,
+.what-is-df-media img {
   width: 100%;
   height: auto;
   display: block;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+/* WHAT IS DELTA FORCE PC */
+#what-is-delta-force-pc {
+  text-align: center;
+}
+
+.what-is-df-prose {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.what-is-df-prose p {
+  color: var(--text-muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.75;
+  margin: 0 0 1.25em;
+}
+
+.what-is-df-prose p:last-child {
+  margin-bottom: 0;
 }
 
 .howto-steps {

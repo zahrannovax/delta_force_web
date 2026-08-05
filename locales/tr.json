@@ -50,6 +50,7 @@
     "common.sysReq.dmaAws":  "CLOUD-DMA seçeneği / AWS seçeneği mevcut",
     "common.sysReq.windows":  "Windows 10 / 11 (64-bit)",
     "common.cta.getAccess":  "Erişim Al →",
+    "common.cta.learnMoreAboutThis":  "Daha fazla bilgi →",
     "common.cta.downloadCheats":  "Cheat\u0027leri Şimdi İndir",
     "common.cta.seeFeatures":  "Tüm Özellikleri Gör",
     "common.cta.readArticle":  "Makaleyi Oku",
