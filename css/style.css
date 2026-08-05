@@ -711,10 +711,14 @@ select {
   margin-bottom: 40px;
 }
 
+#buy-preview .container {
+  max-width: 1480px;
+}
+
 .preview-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 .preview-card {
@@ -1708,6 +1712,52 @@ select {
   color: var(--text-muted);
 }
 
+.buy-cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.buy-cta-wrap--price {
+  width: 100%;
+  margin-top: auto;
+  align-items: stretch;
+}
+
+.buy-cta-wrap--price .price-cta {
+  margin-top: 0;
+  width: 100%;
+}
+
+.buy-cta-wrap--hero {
+  align-items: flex-start;
+}
+
+.buy-redirect-note {
+  margin: 0;
+  max-width: 280px;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--text-muted, #9ca3af);
+  text-align: center;
+  opacity: 0.9;
+}
+
+.buy-cta-wrap--price .buy-redirect-note {
+  max-width: none;
+  width: 100%;
+}
+
+.price-card--featured .buy-redirect-note {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.buy-cta-wrap--hero .buy-redirect-note {
+  text-align: left;
+  max-width: 260px;
+}
+
 .price-cta {
   display: inline-flex;
   align-items: center;
@@ -1917,7 +1967,7 @@ select {
 }
 
 .faq-item[open] summary::after {
-  content: 'âˆ’';
+  content: '\2212';
 }
 
 .faq-item summary:hover {
