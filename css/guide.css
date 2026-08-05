@@ -55,7 +55,7 @@
 
 .guide-lead {
   font-size: clamp(1rem, 2.2vw, 1.15rem);
-  color: #A1A1AA;
+  color: #B4B4BE;
   line-height: 1.7;
   margin: 0;
   max-width: 62ch;
@@ -75,7 +75,7 @@
   font-size: 1.15rem;
   font-weight: 400;
   line-height: 1.75;
-  color: #A1A1AA;
+  color: #B4B4BE;
   margin-bottom: 1.5rem;
 }
 
@@ -115,7 +115,7 @@
 .guide-prose ul li {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #A1A1AA;
+  color: #B4B4BE;
   padding-left: 22px;
   position: relative;
 }
@@ -251,7 +251,7 @@
 
 .guide-cta-lead {
   font-size: 1rem;
-  color: #A1A1AA;
+  color: #B4B4BE;
   margin: 0 0 24px;
   line-height: 1.6;
 }

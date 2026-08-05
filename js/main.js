@@ -9,6 +9,7 @@
 /* ── 1. LENIS SMOOTH SCROLLING ──────────────────────────────── */
 function initLenis() {
   if (typeof Lenis === 'undefined') return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const lenis = new Lenis({
     duration: 1.2,
@@ -99,6 +100,9 @@ function initMobileMenu() {
 
 /* ── 4. 3D TILT CARD EFFECT ─────────────────────────────────── */
 function initTiltCards() {
+  // Skip on touch / coarse pointers — saves main-thread work, no visual loss on mobile
+  if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+
   const cards = document.querySelectorAll('.tilt-card');
   if (!cards.length) return;
 
@@ -368,14 +372,22 @@ function initCopyButtons() {
 
 /* ── INIT ALL ────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  initLenis();
   initNavbar();
   initMobileMenu();
   initStaggeredReveal();
   initScrollReveal();
-  initTiltCards();
-  initMarquee();
   initFAQ();
-  initVideo();
   initCopyButtons();
+
+  // Defer non-critical enhancements (smooth scroll, tilt, video UI, marquee)
+  const defer = window.requestIdleCallback
+    ? (fn) => requestIdleCallback(fn, { timeout: 1500 })
+    : (fn) => setTimeout(fn, 1);
+
+  defer(() => {
+    initLenis();
+    initTiltCards();
+    initMarquee();
+    initVideo();
+  });
 });

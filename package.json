@@ -6,10 +6,13 @@
     "sitemap": "node build-sitemap.js",
     "images": "node optimize-images.js",
     "images:apply": "node apply-responsive-images.js",
-    "optimize": "npm run images && npm run images:apply && npm run sitemap",
+    "minify": "node build-assets.js",
+    "optimize": "npm run images && npm run images:apply && npm run minify && npm run sitemap",
     "build": "npm run optimize"
   },
   "devDependencies": {
-    "sharp": "^0.33.5"
+    "clean-css": "^5.3.3",
+    "sharp": "^0.33.5",
+    "terser": "^5.49.1"
   }
 }
