@@ -1,0 +1,9 @@
+{
+  "name": "delta-force-web",
+  "private": true,
+  "description": "Delta Force Cheat marketing site (deltaforcecheat.com)",
+  "scripts": {
+    "sitemap": "node build-sitemap.js",
+    "build": "node build-sitemap.js"
+  }
+}

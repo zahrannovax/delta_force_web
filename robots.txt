@@ -1,0 +1,8 @@
+# robots.txt — https://deltaforcecheat.com
+User-agent: *
+Allow: /
+
+# Translation JSON is not meant to be indexed as standalone pages
+Disallow: /locales/
+
+Sitemap: https://deltaforcecheat.com/sitemap.xml
