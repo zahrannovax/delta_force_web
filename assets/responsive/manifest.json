@@ -1,0 +1,356 @@
+{
+  "hero-bg.webp": {
+    "slug": "hero-bg",
+    "sourceWidth": 1024,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/hero-bg-480.webp",
+        "bytes": 22546
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/hero-bg-768.webp",
+        "bytes": 43194
+      },
+      {
+        "width": 960,
+        "file": "assets/responsive/hero-bg-960.webp",
+        "bytes": 56746
+      },
+      {
+        "width": 1024,
+        "file": "assets/responsive/hero-bg-1024.webp",
+        "bytes": 93408
+      }
+    ]
+  },
+  "getting-started.jpg": {
+    "slug": "getting-started",
+    "sourceWidth": 1800,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/getting-started-480.webp",
+        "bytes": 23926
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/getting-started-768.webp",
+        "bytes": 54938
+      },
+      {
+        "width": 960,
+        "file": "assets/responsive/getting-started-960.webp",
+        "bytes": 81962
+      },
+      {
+        "width": 1280,
+        "file": "assets/responsive/getting-started-1280.webp",
+        "bytes": 131524
+      },
+      {
+        "width": 1600,
+        "file": "assets/responsive/getting-started-1600.webp",
+        "bytes": 202088
+      }
+    ]
+  },
+  "best-delta-force-cheat-review.jpg": {
+    "slug": "best-delta-force-cheat-review",
+    "sourceWidth": 1400,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/best-delta-force-cheat-review-480.webp",
+        "bytes": 13724
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/best-delta-force-cheat-review-768.webp",
+        "bytes": 32088
+      },
+      {
+        "width": 960,
+        "file": "assets/responsive/best-delta-force-cheat-review-960.webp",
+        "bytes": 47396
+      },
+      {
+        "width": 1280,
+        "file": "assets/responsive/best-delta-force-cheat-review-1280.webp",
+        "bytes": 77074
+      },
+      {
+        "width": 1400,
+        "file": "assets/responsive/best-delta-force-cheat-review-1400.webp",
+        "bytes": 102200
+      }
+    ]
+  },
+  "player-esp-delta-force.jpg": {
+    "slug": "player-esp-delta-force",
+    "sourceWidth": 1400,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/player-esp-delta-force-480.webp",
+        "bytes": 13250
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/player-esp-delta-force-768.webp",
+        "bytes": 26396
+      },
+      {
+        "width": 960,
+        "file": "assets/responsive/player-esp-delta-force-960.webp",
+        "bytes": 35882
+      },
+      {
+        "width": 1280,
+        "file": "assets/responsive/player-esp-delta-force-1280.webp",
+        "bytes": 52576
+      },
+      {
+        "width": 1400,
+        "file": "assets/responsive/player-esp-delta-force-1400.webp",
+        "bytes": 66322
+      }
+    ]
+  },
+  "aimbot-setup-guide.jpg": {
+    "slug": "aimbot-setup-guide",
+    "sourceWidth": 1235,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/aimbot-setup-guide-480.webp",
+        "bytes": 26094
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/aimbot-setup-guide-768.webp",
+        "bytes": 57610
+      },
+      {
+        "width": 960,
+        "file": "assets/responsive/aimbot-setup-guide-960.webp",
+        "bytes": 83380
+      },
+      {
+        "width": 1235,
+        "file": "assets/responsive/aimbot-setup-guide-1235.webp",
+        "bytes": 141504
+      }
+    ]
+  },
+  "vehicle-esp-delta-force.jpg": {
+    "slug": "vehicle-esp-delta-force",
+    "sourceWidth": 686,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/vehicle-esp-delta-force-480.webp",
+        "bytes": 18470
+      },
+      {
+        "width": 686,
+        "file": "assets/responsive/vehicle-esp-delta-force-686.webp",
+        "bytes": 37426
+      }
+    ]
+  },
+  "cloud-dma-aws-options.webp": {
+    "slug": "cloud-dma-aws-options",
+    "sourceWidth": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/cloud-dma-aws-options-480.webp",
+        "bytes": 27944
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/cloud-dma-aws-options-768.webp",
+        "bytes": 65808
+      },
+      {
+        "width": 960,
+        "file": "assets/responsive/cloud-dma-aws-options-960.webp",
+        "bytes": 94844
+      },
+      {
+        "width": 1200,
+        "file": "assets/responsive/cloud-dma-aws-options-1200.webp",
+        "bytes": 164258
+      }
+    ]
+  },
+  "hwid-spoofer-explained.webp": {
+    "slug": "hwid-spoofer-explained",
+    "sourceWidth": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/hwid-spoofer-explained-480.webp",
+        "bytes": 14894
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/hwid-spoofer-explained-768.webp",
+        "bytes": 31182
+      },
+      {
+        "width": 960,
+        "file": "assets/responsive/hwid-spoofer-explained-960.webp",
+        "bytes": 42362
+      },
+      {
+        "width": 1200,
+        "file": "assets/responsive/hwid-spoofer-explained-1200.webp",
+        "bytes": 78042
+      }
+    ]
+  },
+  "esp-configuration-guide.webp": {
+    "slug": "esp-configuration-guide",
+    "sourceWidth": 1600,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/esp-configuration-guide-480.webp",
+        "bytes": 10748
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/esp-configuration-guide-768.webp",
+        "bytes": 20978
+      },
+      {
+        "width": 960,
+        "file": "assets/responsive/esp-configuration-guide-960.webp",
+        "bytes": 29132
+      },
+      {
+        "width": 1280,
+        "file": "assets/responsive/esp-configuration-guide-1280.webp",
+        "bytes": 41024
+      },
+      {
+        "width": 1600,
+        "file": "assets/responsive/esp-configuration-guide-1600.webp",
+        "bytes": 71016
+      }
+    ]
+  },
+  "advanced-aimbot-delta-force.webp": {
+    "slug": "advanced-aimbot-delta-force",
+    "sourceWidth": 800,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/advanced-aimbot-delta-force-480.webp",
+        "bytes": 11564
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/advanced-aimbot-delta-force-768.webp",
+        "bytes": 19772
+      },
+      {
+        "width": 800,
+        "file": "assets/responsive/advanced-aimbot-delta-force-800.webp",
+        "bytes": 28228
+      }
+    ]
+  },
+  "weapon-gadget-esp-delta-force.webp": {
+    "slug": "weapon-gadget-esp-delta-force",
+    "sourceWidth": 1200,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/weapon-gadget-esp-delta-force-480.webp",
+        "bytes": 16290
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/weapon-gadget-esp-delta-force-768.webp",
+        "bytes": 31352
+      },
+      {
+        "width": 960,
+        "file": "assets/responsive/weapon-gadget-esp-delta-force-960.webp",
+        "bytes": 42090
+      },
+      {
+        "width": 1200,
+        "file": "assets/responsive/weapon-gadget-esp-delta-force-1200.webp",
+        "bytes": 81672
+      }
+    ]
+  },
+  "no-recoil-fov-control.webp": {
+    "slug": "no-recoil-fov-control",
+    "sourceWidth": 800,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/no-recoil-fov-control-480.webp",
+        "bytes": 10802
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/no-recoil-fov-control-768.webp",
+        "bytes": 20412
+      },
+      {
+        "width": 800,
+        "file": "assets/responsive/no-recoil-fov-control-800.webp",
+        "bytes": 33182
+      }
+    ]
+  },
+  "Hack Preview Image 1.webp": {
+    "slug": "hack-preview-image-1",
+    "sourceWidth": 800,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/hack-preview-image-1-480.webp",
+        "bytes": 10802
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/hack-preview-image-1-768.webp",
+        "bytes": 20412
+      },
+      {
+        "width": 800,
+        "file": "assets/responsive/hack-preview-image-1-800.webp",
+        "bytes": 33182
+      }
+    ]
+  },
+  "Hack Preview Image 2.webp": {
+    "slug": "hack-preview-image-2",
+    "sourceWidth": 800,
+    "variants": [
+      {
+        "width": 480,
+        "file": "assets/responsive/hack-preview-image-2-480.webp",
+        "bytes": 11564
+      },
+      {
+        "width": 768,
+        "file": "assets/responsive/hack-preview-image-2-768.webp",
+        "bytes": 19772
+      },
+      {
+        "width": 800,
+        "file": "assets/responsive/hack-preview-image-2-800.webp",
+        "bytes": 28228
+      }
+    ]
+  }
+}

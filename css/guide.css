@@ -46,7 +46,7 @@
 }
 
 .guide-article-header h1 {
-  font-size: 2.8rem;
+  font-size: clamp(1.75rem, 4.5vw, 2.8rem);
   font-weight: 700;
   line-height: 1.2;
   color: #FFFFFF;
@@ -54,10 +54,11 @@
 }
 
 .guide-lead {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
   color: #A1A1AA;
   line-height: 1.7;
   margin: 0;
+  max-width: 62ch;
 }
 
 /* ----------------------------------------------------------------
@@ -80,7 +81,7 @@
 
 /* Headings */
 .guide-prose h2 {
-  font-size: 1.8rem;
+  font-size: clamp(1.35rem, 3.2vw, 1.8rem);
   font-weight: 700;
   line-height: 1.2;
   color: #FFFFFF;
@@ -270,28 +271,12 @@
     padding: 52px 0 72px;
   }
 
-  .guide-article-header h1 {
-    font-size: 2rem;
-  }
-
   .guide-prose h2 {
-    font-size: 1.5rem;
+    font-size: clamp(1.35rem, 3vw, 1.5rem);
   }
 }
 
-@media (max-width: 640px) {
-  .guide-article-header h1 {
-    font-size: 1.75rem;
-  }
-
-  .guide-requirements-card {
-    padding: 24px 20px;
-  }
-
-  .guide-cta-heading {
-    font-size: 1.4rem;
-  }
-
+@media (max-width: 768px) {
   .guide-cta-buttons {
     flex-direction: column;
   }
@@ -299,6 +284,22 @@
   .guide-cta-buttons .btn {
     width: 100%;
     justify-content: center;
+    white-space: normal;
+    min-height: 48px;
+  }
+
+  .guide-requirements-card {
+    padding: 24px 20px;
+  }
+
+  .guide-cta-heading {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .guide-article-header h1 {
+    font-size: clamp(1.55rem, 6vw, 1.75rem);
   }
 }
 

@@ -4,6 +4,12 @@
   "description": "Delta Force Cheat marketing site (deltaforcecheat.com)",
   "scripts": {
     "sitemap": "node build-sitemap.js",
-    "build": "node build-sitemap.js"
+    "images": "node optimize-images.js",
+    "images:apply": "node apply-responsive-images.js",
+    "optimize": "npm run images && npm run images:apply && npm run sitemap",
+    "build": "npm run optimize"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
   }
 }
