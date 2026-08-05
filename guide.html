@@ -31,7 +31,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/style.css?v=19">
-  <link rel="stylesheet" href="/css/guide.css?v=4">
+  <link rel="stylesheet" href="/css/guide.css?v=5">
 
   <!-- Breadcrumb JSON-LD -->
   <script type="application/ld+json">
@@ -205,7 +205,7 @@
         <!-- ARTICLE HEADER -->
         <div class="guide-article-header">
           <p class="guide-eyebrow" data-i18n="guide.eyebrow">Anti-Cheat Guide</p>
-          <h1 data-i18n="guide.title">What Anti-Cheat Does Delta Force Use?</h1>
+          <h1 id="what-anti-cheat" data-i18n="guide.title">What Anti-Cheat Does Delta Force Use?</h1>
           <p class="guide-lead" data-i18n="guide.lead">A clear look at Delta Force anti cheat — what kind of system it uses, whether it is kernel-level, how ACE works on PC, and what DMA Shield means for hardware cheats.</p>
         </div>
 
@@ -215,7 +215,7 @@
           <p data-i18n-html="guide.p1.html">If you search <strong>what anti cheat does Delta Force use</strong>, the short answer is simple: Delta Force runs on <strong>Anti-Cheat Expert (ACE)</strong>. That is the main Delta Force anti cheat system used on PC and mobile. The Steam page also lists it by name and marks it as kernel-level.</p>
           <p data-i18n="guide.p2">This guide covers the full picture in plain language — what ACE is, how the stack works, and whether Delta Force can detect DMA devices.</p>
 
-          <h2 data-i18n="guide.h2.kind">What Kind of Anti-Cheat Does Delta Force Use?</h2>
+          <h2 id="anti-cheat-kind" data-i18n="guide.h2.kind">What Kind of Anti-Cheat Does Delta Force Use?</h2>
           <p data-i18n-html="guide.p3.html">So, <strong>what kind of anti cheat does Delta Force use</strong>? It uses ACE, a long-running game security product from Tencent. ACE has been around since 2005 and is used across many online titles. In Delta Force, the in-game security team (often called G.T.I. Security) works with ACE as the core protection layer.</p>
           <p data-i18n="guide.p4">ACE is not a single check. It is a mix of tools that watch the client, known cheat signatures, player behavior, system trust settings, and hardware-level access paths. On PC, that means deep system access. On mobile, the focus is more on stopping file edits, debug tools, speed hacks, and virtual machine use.</p>
           <ul>
@@ -224,13 +224,13 @@
             <li data-i18n-html="guide.li.economy.html"><strong>Economy / chat:</strong> models that watch for illicit trading and abusive content</li>
           </ul>
 
-          <h2 data-i18n="guide.h2.kernel">Is Delta Force Using Kernel-Level Anti-Cheat?</h2>
+          <h2 id="kernel-level" data-i18n="guide.h2.kernel">Is Delta Force Using Kernel-Level Anti-Cheat?</h2>
           <p data-i18n-html="guide.p5.html">Yes. <strong>Delta Force kernel anti cheat</strong> is confirmed. The Steam store page for Delta Force states that the game uses kernel-level anti-cheat and names Anti-Cheat Expert (ACE).</p>
           <p data-i18n="guide.p6">Kernel-level means the anti-cheat can run with high system rights — deeper than a normal app. Developers have said this level is needed to fight modern software cheats and many hardware-based methods. Without kernel access, a large part of deep memory and driver-level abuse is harder to see and harder to stop.</p>
           <h3 data-i18n="guide.h3.kernelMeans">What kernel-level ACE means for players</h3>
           <p data-i18n="guide.p7">In practice, ACE installs with the game and can run services tied to anti-cheat protection. Some players reported leftover services after uninstall in early launches. Later updates improved cleanup so ACE is removed with the game more cleanly. If you run other kernel anti-cheats (like EAC or Vanguard), conflicts can still happen if more than one wants deep system control at the same time — that is common across kernel anti-cheat titles, not unique to Delta Force.</p>
 
-          <h2 data-i18n="guide.h2.how">How Delta Force's Anti-Cheat Works Explained</h2>
+          <h2 id="how-anti-cheat-works" data-i18n="guide.h2.how">How Delta Force's Anti-Cheat Works Explained</h2>
           <p data-i18n="guide.p8">ACE does not rely on one trick. Official security briefs describe a layered setup. Here is how Delta Force anti cheat works in simple terms.</p>
 
           <h3 data-i18n="guide.h3.client">1. Client and signature checks</h3>
@@ -245,7 +245,7 @@
           <h3 data-i18n="guide.h3.env">4. Game data and environment checks</h3>
           <p data-i18n="guide.p12">Later security updates also focus on abnormal system environments, suspicious execution paths, shellcode, unauthorized drivers, and game-data tampering. In short: ACE watches both what is installed and how the match environment behaves.</p>
 
-          <h2 data-i18n="guide.h2.dma">Can Delta Force Detect DMA Devices?</h2>
+          <h2 id="dma-detection" data-i18n="guide.h2.dma">Can Delta Force Detect DMA Devices?</h2>
           <p data-i18n="guide.p13">Short answer: Delta Force has dedicated systems built to stop and detect DMA abuse. That does not mean every DMA setup fails forever — but it does mean DMA is a major target of the current anti-cheat stack.</p>
           <p data-i18n="guide.p14">DMA (Direct Memory Access) lets some hardware talk to RAM without going through the normal CPU path. Cheat hardware can abuse that path to read game memory for ESP-style data or to help with aim tools. Because the read can bypass normal software checks, older anti-cheats struggled with it.</p>
           <h3 data-i18n="guide.h3.dmaShield">What DMA Shield does</h3>

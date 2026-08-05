@@ -1384,6 +1384,41 @@ select {
   flex: 1;
 }
 
+.learn-more-card--static {
+  cursor: default;
+}
+
+.learn-more-card--static:hover {
+  transform: none;
+}
+
+.learn-more-card--static p {
+  flex: 0;
+}
+
+.learn-guide-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.learn-guide-links a {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.learn-guide-links a:hover {
+  color: var(--accent-primary);
+}
+
 .learn-card-cta {
   display: inline-flex;
   align-items: center;

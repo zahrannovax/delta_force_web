@@ -194,6 +194,11 @@
 /* ----------------------------------------------------------------
    CTA ROW — end of prose
    ---------------------------------------------------------------- */
+.guide-prose h2,
+.guide-article-header h1 {
+  scroll-margin-top: 110px;
+}
+
 .guide-cta-row {
   display: block;
   margin-top: 4em;
