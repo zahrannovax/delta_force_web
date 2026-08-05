@@ -195,10 +195,23 @@
    CTA ROW — end of prose
    ---------------------------------------------------------------- */
 .guide-cta-row {
+  display: block;
   margin-top: 4em;
   padding-top: 3em;
   border-top: 1px solid rgba(168, 85, 247, 0.2);
   text-align: left;
+  max-width: 760px;
+}
+
+.guide-cta-row--page-end {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.guide-cta-section {
+  padding-top: 8px;
+  padding-bottom: 72px;
 }
 
 .guide-cta-eyebrow {
