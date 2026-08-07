@@ -24,7 +24,7 @@ const EXCLUDE_FILES = new Set([
 
 /** Path substrings that mean "skip this image" */
 const IMAGE_SKIP = [
-  'zadeyo-logo',
+  'logo',
   'default-monochrome',
   'favicon',
   'apple-touch-icon',
