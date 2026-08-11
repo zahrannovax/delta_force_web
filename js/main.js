@@ -57,11 +57,18 @@ function initNavbar() {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Highlight active link based on current page
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  // Highlight active link based on current clean URL path
+  const normalizePath = (path) => {
+    if (!path) return '/';
+    const clean = path.split('#')[0].split('?')[0].replace(/\.html$/i, '');
+    if (clean === '' || clean === '/' || clean === '/index') return '/';
+    return clean.startsWith('/') ? clean : `/${clean}`;
+  };
+  const currentPath = normalizePath(window.location.pathname);
   document.querySelectorAll('.navbar-links a').forEach((link) => {
-    const linkPath = link.getAttribute('href').split('/').pop();
-    if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('http') || href.startsWith('#')) return;
+    if (normalizePath(href) === currentPath) {
       link.classList.add('active');
     }
   });
