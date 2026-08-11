@@ -45,13 +45,53 @@ function Get-MimeType([string]$ext) {
     return 'application/octet-stream'
 }
 
+# Custom clean-URL aliases (Cloudflare-style pretty paths that don't match filename)
+$CleanUrlAliases = @{
+    '/blog/delta-force-season-3-hack-status' = 'blog-article.html'
+}
+
 # ── HELPER: Resolve URL path to filesystem path ───────────────
+# Mirrors Cloudflare Pages: /blog -> blog.html, / -> index.html
 function Resolve-RequestPath([string]$rawUrl) {
-    $path = $rawUrl.Split('?')[0]
+    $path = $rawUrl.Split('?')[0].Split('#')[0]
     $path = [System.Uri]::UnescapeDataString($path)
-    if ($path -eq '/' -or $path -eq '') { $path = '/index.html' }
-    $relative = $path.TrimStart('/')
-    return (Join-Path $RootDir $relative)
+
+    if ($path -eq '/' -or $path -eq '') {
+        return @{ FilePath = (Join-Path $RootDir 'index.html'); RedirectTo = $null }
+    }
+
+    # Redirect /page.html -> /page (and /index.html -> /) like production
+    if ($path -match '\.html$') {
+        if ($path -eq '/index.html') {
+            return @{ FilePath = $null; RedirectTo = '/' }
+        }
+        $clean = $path -replace '\.html$', ''
+        return @{ FilePath = $null; RedirectTo = $clean }
+    }
+
+    if ($CleanUrlAliases.ContainsKey($path)) {
+        return @{ FilePath = (Join-Path $RootDir $CleanUrlAliases[$path]); RedirectTo = $null }
+    }
+
+    $relative = $path.TrimStart('/').TrimEnd('/')
+    $direct = Join-Path $RootDir $relative
+    if ([System.IO.File]::Exists($direct)) {
+        return @{ FilePath = $direct; RedirectTo = $null }
+    }
+
+    # Clean URL -> sibling .html file (e.g. /blog -> blog.html)
+    $withHtml = Join-Path $RootDir ($relative + '.html')
+    if ([System.IO.File]::Exists($withHtml)) {
+        return @{ FilePath = $withHtml; RedirectTo = $null }
+    }
+
+    # Directory index fallback
+    $indexInDir = Join-Path $direct 'index.html'
+    if ([System.IO.Directory]::Exists($direct) -and [System.IO.File]::Exists($indexInDir)) {
+        return @{ FilePath = $indexInDir; RedirectTo = $null }
+    }
+
+    return @{ FilePath = $direct; RedirectTo = $null }
 }
 
 # ── CHECK IF PORT IS FREE ────────────────────────────────────
@@ -97,7 +137,7 @@ Write-Host "  [>>] Local:  " -NoNewline -ForegroundColor Green
 Write-Host $BaseUrl
 Write-Host "  [>>] Root:   " -NoNewline -ForegroundColor DarkGray
 Write-Host $RootDir
-Write-Host "  [>>] Pages:  index.html  delta-force-cheats.html  blog.html  guide.html" -ForegroundColor DarkGray
+Write-Host "  [>>] Clean URLs:  /  /delta-force-cheats  /blog  /guide  (+ .html -> clean 308)" -ForegroundColor DarkGray
 Write-Host ""
 Write-Host "  Press Ctrl+C to stop the server." -ForegroundColor Yellow
 Write-Host ""
@@ -132,10 +172,22 @@ try {
         $resp = $ctx.Response
 
         $requestCount++
-        $filePath = Resolve-RequestPath $req.RawUrl
-        $ext      = [System.IO.Path]::GetExtension($filePath).ToLower()
+        $resolved = Resolve-RequestPath $req.RawUrl
 
         try {
+            # Cloudflare-style: redirect .html requests to clean URLs
+            if ($resolved.RedirectTo) {
+                $resp.StatusCode = 308
+                $resp.RedirectLocation = $resolved.RedirectTo
+                $resp.ContentLength64 = 0
+                Write-Host "  308  " -NoNewline -ForegroundColor Cyan
+                Write-Host "$($req.RawUrl.Split('?')[0]) -> $($resolved.RedirectTo)"
+                continue
+            }
+
+            $filePath = $resolved.FilePath
+            $ext      = [System.IO.Path]::GetExtension($filePath).ToLower()
+
             if ([System.IO.File]::Exists($filePath)) {
 
                 $mime  = Get-MimeType $ext
