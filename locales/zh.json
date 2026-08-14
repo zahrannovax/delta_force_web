@@ -147,7 +147,7 @@
     "home.steps.1.body": "在网页结账完成购买。付款后，订单页会显示加载器下载与安装说明。另有视频指南协助你完成设置。",
     "home.steps.1.badge": "第 1 步",
     "home.steps.2.title": "调整 Windows 设置",
-    "home.steps.2.body": "我们的 Delta Force 辅助为外部程序，需要关闭 Core Isolation 与 Exploit Protection。提供<a href=\"/guide\">分步指南</a> — 不到 2 分钟即可完成。",
+    "home.steps.2.body": "我们的 Delta Force 辅助为外部程序，需要关闭 Core Isolation 与 Exploit Protection。提供<a href=\"/guide#installation\">分步指南</a> — 不到 2 分钟即可完成。",
     "home.steps.2.badge": "第 2 步",
     "home.steps.3.title": "加载并主宰",
     "home.steps.3.body": "打开加载器，启动 Delta Force，并在游戏中点击 OK。Aimbot、Player ESP、Weapon ESP 及完整辅助套件即已激活。自信主宰每一场对局。",

@@ -200,7 +200,21 @@
   scroll-margin-top: 110px;
 }
 
-.guide-cta-row {
+.guide-prose .faq {
+  max-width: none;
+  margin: 1.2rem 0 0;
+}
+
+.guide-prose .faq-answer a {
+  color: #A855F7;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.guide-prose .faq-answer strong {
+  color: #fff;
+  font-weight: 700;
+}
   display: block;
   margin-top: 4em;
   padding-top: 3em;
@@ -264,8 +278,281 @@
 }
 
 /* ----------------------------------------------------------------
-   RESPONSIVE
+   INSTALLATION TIMELINE
    ---------------------------------------------------------------- */
+.install-section {
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+.install-header {
+  max-width: 820px;
+  margin-bottom: 36px;
+}
+
+.install-header h2 {
+  font-size: clamp(1.45rem, 3.4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 14px;
+  scroll-margin-top: 110px;
+}
+
+.install-lead {
+  font-size: 1.05rem;
+  color: #B4B4BE;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.install-subhead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 32px;
+}
+
+.install-subhead::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(168, 85, 247, 0.28);
+}
+
+.install-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 860px;
+}
+
+.install-step {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 20px;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.install-step:last-child {
+  padding-bottom: 0;
+}
+
+.install-step::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: 0;
+  width: 2px;
+  background: rgba(168, 85, 247, 0.35);
+}
+
+.install-step:last-child::before {
+  display: none;
+}
+
+.install-step-marker {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #A855F7;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 6px rgba(168, 85, 247, 0.18);
+  flex-shrink: 0;
+}
+
+.install-step-body h4 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 6px 0 12px;
+  line-height: 1.25;
+}
+
+.install-step-body p {
+  font-size: 1.02rem;
+  color: #B4B4BE;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.install-step-body a {
+  color: #A855F7;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.install-step-body a:hover {
+  color: #9333EA;
+}
+
+.install-step-body strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.install-checks {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.install-checks li {
+  position: relative;
+  padding-inline-start: 28px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d4d4dc;
+}
+
+.install-checks li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.35em;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #4ADE80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.18);
+}
+
+.install-checks li::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 4px;
+  top: 0.52em;
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid #052e16;
+  border-bottom: 2px solid #052e16;
+  transform: rotate(-45deg);
+}
+
+.install-flow {
+  background: #120e1c;
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 0 0 18px;
+  overflow-x: auto;
+}
+
+.install-flow code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #e5e5ef;
+  white-space: nowrap;
+}
+
+.install-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 0;
+}
+
+.install-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.install-note p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.install-note--info {
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.28);
+}
+
+.install-note--info svg {
+  color: #60A5FA;
+}
+
+.install-note--warn {
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.32);
+}
+
+.install-note--warn svg {
+  color: #F87171;
+}
+
+.install-note--tip {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.32);
+}
+
+.install-note--tip svg {
+  color: #A855F7;
+}
+
+[dir="rtl"] .install-step::before {
+  left: auto;
+  right: 19px;
+}
+
+[dir="rtl"] .install-checks li::after {
+  transform: rotate(-45deg) scaleX(-1);
+}
+
+@media (max-width: 768px) {
+  .install-step {
+    grid-template-columns: 32px 1fr;
+    gap: 14px;
+    padding-bottom: 32px;
+  }
+
+  .install-step-marker {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.18);
+  }
+
+  .install-step::before {
+    left: 15px;
+    top: 32px;
+  }
+
+  [dir="rtl"] .install-step::before {
+    left: auto;
+    right: 15px;
+  }
+
+  .install-step-body h4 {
+    font-size: 1.15rem;
+    margin-top: 4px;
+  }
+
+  .install-flow code {
+    white-space: pre-wrap;
+  }
+}
 @media (max-width: 860px) {
   .guide-section {
     padding: 52px 0 72px;

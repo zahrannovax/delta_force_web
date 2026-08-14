@@ -147,7 +147,7 @@
     "home.steps.1.body": "Dokończ zakup w checkoutcie webowym. Zaraz po płatności na stronie zamówienia zobaczysz pobieranie loadera i setup. Dołączony jest przewodnik wideo.",
     "home.steps.1.badge": "Krok 1",
     "home.steps.2.title": "Dostosuj ustawienia Windows",
-    "home.steps.2.body": "Nasz cheat Delta Force jest zewnętrzny i wymaga wyłączenia Core Isolation oraz ochrony przed exploitami. <a href=\"/guide\">Przewodnik krok po kroku</a> — poniżej 2 minut.",
+    "home.steps.2.body": "Nasz cheat Delta Force jest zewnętrzny i wymaga wyłączenia Core Isolation oraz ochrony przed exploitami. <a href=\"/guide#installation\">Przewodnik krok po kroku</a> — poniżej 2 minut.",
     "home.steps.2.badge": "Krok 2",
     "home.steps.3.title": "Załaduj i dominuj",
     "home.steps.3.body": "Otwórz loader, uruchom Delta Force i naciśnij OK w grze. Aimbot, Player ESP, Weapon ESP i pełny zestaw cheatów są aktywne. Dominuj w każdym meczu z pewnością.",

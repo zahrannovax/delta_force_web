@@ -82,7 +82,7 @@
       },
       {
         "@type": "Question",
-        "name": "Is Delta Force using kernel-level anti-cheat?",
+        "name": "Is Delta Force kernel anti cheat confirmed?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes. Delta Force uses kernel-level Anti-Cheat Expert (ACE). The Steam store page states that the game uses kernel-level anti-cheat, and developers have said kernel access is needed to handle deep software and hardware cheat methods."
@@ -94,6 +94,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Delta Force has systems built to stop and detect DMA abuse. ACE DMA Shield uses Windows Kernel DMA Protection plus VT-d or IOMMU features, remaps memory away from abnormal devices, checks PCI device signatures, and can support hardware-linked bans. Detection is strong, but like any anti-cheat it is not claimed to catch every case forever."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a virtual computer or Shadow PC bypass Delta Force ACE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ACE reads the machine environment, not only the account. A virtual computer or Shadow PC changes some IDs, but leftover ACE services, TPM, and kernel checks can still match a flagged profile. An HWID spoofer resets the reported fingerprint. A VM alone is not a full ACE bypass."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a Delta Force anti cheat uninstall after removing the game?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A normal game uninstall is not always a clean Delta Force anti cheat uninstall. ACE can leave services behind. Later patches improved cleanup, but leftover kernel services can still conflict with other anti-cheats. Reinstalling Windows does not change disk or motherboard IDs."
         }
       }
     ]
@@ -264,18 +280,45 @@
           <h3 data-i18n="guide.h3.takeaway">Honest takeaway on DMA detection</h3>
           <p data-i18n="guide.p17">Can Delta Force detect DMA devices? It can detect many DMA devices and block or poison unauthorized memory access through DMA Shield, device checks, and enforcement. No anti-cheat is perfect forever, and the cat-and-mouse cycle continues. But for Delta Force in 2025–2026, DMA is no longer treated as an invisible free pass — it is a named, active defense target.</p>
 
-          <h2 data-i18n="guide.h2.summary">Delta Force Anti Cheat — Quick Summary</h2>
-          <div class="guide-requirements-card">
-            <ul>
-              <li data-i18n-html="guide.summary.1.html"><strong>Anti-cheat name:</strong> Anti-Cheat Expert (ACE)</li>
-              <li data-i18n-html="guide.summary.2.html"><strong>Kernel-level:</strong> Yes — confirmed on Steam and by developer comments</li>
-              <li data-i18n-html="guide.summary.3.html"><strong>Main PC layers:</strong> signatures, client checks, behavior analysis, Secure Boot / TPM, DMA Shield</li>
-              <li data-i18n-html="guide.summary.4.html"><strong>DMA:</strong> Actively defended with DMA Shield, VT-d / IOMMU support, and hardware signature checks</li>
-              <li data-i18n-html="guide.summary.5.html"><strong>Mobile:</strong> Prevention-first hardening against modifiers, debug tools, and VMs</li>
-            </ul>
+          <h2 id="faq">FAQ: Delta Force Anti Cheat</h2>
+          <div class="faq" role="list">
+            <details class="faq-item" role="listitem">
+              <summary>What anti cheat does Delta Force use?</summary>
+              <div class="faq-answer">
+                Delta Force uses <strong>Anti-Cheat Expert (ACE)</strong>. Steam lists it by name. It is the main <strong>Delta Force anti cheat</strong> layer on PC and mobile — not Easy Anti-Cheat, BattlEye, or Vanguard.
+              </div>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary>What kind of anti cheat does Delta Force use?</summary>
+              <div class="faq-answer">
+                <strong>What kind of anti cheat does Delta Force use</strong> is a stack, not one scan. ACE on PC mixes signature checks, client anomaly checks, behavior analysis, Secure Boot and TPM 2.0, and DMA Shield. On mobile the focus is file edits, debug tools, speed hacks, and virtual machines.
+              </div>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary>Is Delta Force kernel anti cheat confirmed?</summary>
+              <div class="faq-answer">
+                Yes. <strong>Delta Force kernel anti cheat</strong> is confirmed on the Steam store page. Kernel-level ACE runs with high system rights so it can see driver-level and early-boot methods that a normal app cannot. That is why leftover ACE services can remain after an uninstall on some builds.
+              </div>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary>Can Delta Force detect DMA devices?</summary>
+              <div class="faq-answer">
+                ACE DMA Shield is built to stop and detect DMA abuse. It uses Windows Kernel DMA Protection, VT-d / IOMMU isolation, memory remapping, and PCI device signature checks, and it can support hardware-linked bans. <a href="/blog-cloud-dma-aws">CLOUD-DMA on AWS</a> keeps cheat processing off the local game process instead of a classic on-PC injector.
+              </div>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary>Does a virtual computer or Shadow PC bypass Delta Force ACE?</summary>
+              <div class="faq-answer">
+                ACE reads the machine environment, not only the account. A virtual computer or Shadow PC changes some IDs, but leftover ACE services, TPM, and kernel checks can still match a flagged profile. An <a href="/blog-hwid-spoofer">HWID spoofer</a> resets the reported fingerprint. A VM alone is not a full ACE bypass.
+              </div>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary>Do I need a Delta Force anti cheat uninstall after removing the game?</summary>
+              <div class="faq-answer">
+                A normal game uninstall is not always a clean <strong>Delta Force anti cheat uninstall</strong>. ACE can leave services behind. Later patches improved cleanup, but leftover kernel services can still conflict with other anti-cheats. Reinstalling Windows does not change disk or motherboard IDs — that is a hardware fingerprint problem, not an ACE file problem.
+              </div>
+            </details>
           </div>
-
-          <p data-i18n-html="guide.p18.html">If you came here asking <strong>what anti cheat does Delta Force use</strong>, you now have the full answer: ACE, running as a kernel-level Delta Force anti cheat with extra layers for behavior, boot trust, and DMA hardware.</p>
 
         </article>
 
@@ -331,6 +374,80 @@
       </div>
     </section>
 
+    <!-- INSTALLATION STEPS -->
+    <section id="installation" class="section install-section" aria-labelledby="install-heading">
+      <div class="container">
+        <header class="install-header">
+          <h2 id="install-heading">Delta Force Cheats — Complete Setup &amp; Installation Guide</h2>
+          <p class="install-lead">This is the full version of the 3-step quick start: purchase, Windows settings, then load Delta Force. Follow the order. Do not skip Core Isolation, HVCI, TPM, or Secure Boot.</p>
+        </header>
+
+        <h3 class="install-subhead">Installation Steps</h3>
+
+        <ol class="install-timeline">
+          <li class="install-step">
+            <div class="install-step-marker" aria-hidden="true"><span>1</span></div>
+            <div class="install-step-body">
+              <h4>Purchase &amp; Download</h4>
+              <p>Finish checkout on the buy page. After payment, the order page is your hub — loader download, setup steps, and a video guide. Save your license details and keep that page open until the files are extracted.</p>
+              <ul class="install-checks">
+                <li>Finish checkout and wait for the order page to load.</li>
+                <li>Download the latest loader from the order page.</li>
+                <li>Watch the setup video before changing Windows settings.</li>
+                <li>Extract the files and do not run the loader from inside a ZIP.</li>
+              </ul>
+              <aside class="install-note install-note--info">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                <p>If the order page does not show the download within a few minutes, refresh once, check spam for the receipt email, then contact support via <a href="https://discord.gg/t6n2cUNkPT" target="_blank" rel="noopener noreferrer">Discord</a> with your order ID.</p>
+              </aside>
+            </div>
+          </li>
+
+          <li class="install-step">
+            <div class="install-step-marker" aria-hidden="true"><span>2</span></div>
+            <div class="install-step-body">
+              <h4>Adjust Windows Settings</h4>
+              <p>This suite is <strong>external</strong> and is built around Windows security features staying <strong>on</strong>: <strong>HVCI</strong>, <strong>Core Isolation / Memory integrity</strong>, <strong>TPM</strong>, and <strong>Secure Boot</strong>. Apply Exploit Protection as shown in the video. The process takes under 2 minutes and must be done before you open the loader.</p>
+              <ul class="install-checks">
+                <li>Open Windows Security → Device security → Core isolation details.</li>
+                <li>Turn <strong>Memory integrity / Core Isolation</strong> ON as shown in the video.</li>
+                <li>Confirm <strong>HVCI</strong>, <strong>TPM</strong>, and <strong>Secure Boot</strong> are ON.</li>
+                <li>Open Exploit protection and apply the settings from the setup guide.</li>
+                <li>Restart Windows if Windows Security asks you to reboot.</li>
+                <li>Use Windows 10 or 11 (64-bit) and close heavy overlays (Discord overlay can stay off for first launch).</li>
+              </ul>
+              <aside class="install-note install-note--warn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+                <p>Follow the video exactly. Do not skip Core Isolation, HVCI, TPM, Secure Boot, or Exploit Protection — the external loader is built around those settings being enabled.</p>
+              </aside>
+            </div>
+          </li>
+
+          <li class="install-step">
+            <div class="install-step-marker" aria-hidden="true"><span>3</span></div>
+            <div class="install-step-body">
+              <h4>Load &amp; Dominate</h4>
+              <p>Open the loader, launch Delta Force, and press <strong>OK</strong> in-game to activate the suite. Then turn on Aimbot, Player ESP, Weapon ESP, Gadget ESP, and Vehicle ESP from the menu. Optional: connect <a href="/blog-cloud-dma-aws">CLOUD-DMA on AWS</a> for the external processing path.</p>
+              <div class="install-flow" role="note">
+                <code>Open Loader.exe → Launch Delta Force on Steam → Press OK in-game → Open menu → Enable Aimbot / Player ESP / Weapon ESP / Vehicle ESP</code>
+              </div>
+              <ul class="install-checks">
+                <li>Run the loader and wait until it is ready.</li>
+                <li>Start Delta Force through Steam and join Warfare or Operations.</li>
+                <li>Press <strong>OK</strong> on the in-game prompt to activate the suite.</li>
+                <li>Turn on Aimbot, Player ESP, Weapon ESP, Gadget ESP, and Vehicle ESP from the menu.</li>
+                <li>Save a Config so your setup loads instantly next session.</li>
+              </ul>
+              <aside class="install-note install-note--tip">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                <p>For a natural aimbot feel, start with chest bone, medium Aim FOV, and no recoil on. Enable Player ESP for Operations. Use CLOUD-DMA for longer sessions under ACE. Full presets: <a href="/blog-aimbot-setup">Aimbot Setup Guide</a> and <a href="/blog-esp-setup">ESP Configuration Guide</a>.</p>
+              </aside>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
     <!-- CTA — AFTER KEEP READING -->
     <section class="section guide-cta-section" aria-label="Next step" data-i18n-aria-label="guide.cta.aria">
       <div class="container">
@@ -339,8 +456,8 @@
           <h2 class="guide-cta-heading" data-i18n="guide.cta.title">Ready for Delta Force Tools Built Around ACE?</h2>
           <p class="guide-cta-lead" data-i18n="guide.cta.lead">Browse plans built for current Delta Force anti cheat conditions, including DMA-focused options.</p>
           <div class="guide-cta-buttons">
+            <a href="https://zadeyo.com/go/ZAHRAN?to=%2Fproducts%2Fdelta-force" class="btn btn-primary" target="_blank" rel="noopener noreferrer" id="guide-buy-now-btn" data-i18n="nav.cta">Buy Now</a>
             <a href="/delta-force-cheats" class="btn btn-primary" id="guide-buy-page-btn" data-i18n="guide.cta.plans">View Plans →</a>
-            <a href="/blog" class="btn btn-secondary" id="guide-blog-btn" data-i18n="guide.cta.blog">Blog & Updates</a>
           </div>
         </div>
       </div>
