@@ -504,6 +504,11 @@ body::after {
   margin: 2.5em 0;
 }
 
+.blog-prose .faq {
+  max-width: none;
+  margin: 1.2rem 0 0;
+}
+
 /* CALLOUT */
 .blog-callout {
   background: var(--blog-bg-card);
@@ -590,8 +595,14 @@ body::after {
   font-size: 1rem;
   color: var(--blog-muted);
   margin: 0 0 28px;
-  max-width: 560px;
+  max-width: 640px;
   margin-inline: auto;
+}
+
+.blog-cta-banner p a {
+  color: var(--blog-accent);
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .blog-cta-buttons {

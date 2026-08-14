@@ -1027,6 +1027,50 @@ select {
   margin-bottom: 16px;
 }
 
+.howto-step a {
+  color: var(--accent-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.howto-step a:hover {
+  color: #c084fc;
+}
+
+.getting-started-guide-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 48px;
+  text-align: center;
+}
+
+.getting-started-guide-btn {
+  text-transform: lowercase;
+  white-space: normal;
+  max-width: 34rem;
+  line-height: 1.35;
+  padding: 14px 32px;
+}
+
+.getting-started-guide-soft {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.getting-started-guide-soft:hover {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .step-badge {
   display: inline-block;
   padding: 4px 14px;
@@ -1101,7 +1145,84 @@ select {
   flex-wrap: wrap;
 }
 
-/* REVIEWS MARQUEEâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* HOME BUY CTA BANNER */
+.buy-cta-banner-section {
+  padding: 80px 0;
+}
+
+.buy-cta-banner-inner {
+  background: linear-gradient(110deg, #0d0b14 55%, rgba(88, 28, 135, 0.22) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 22px;
+  padding: 48px 52px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.buy-cta-banner-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent-primary), rgba(168, 85, 247, 0));
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.5);
+}
+
+.buy-cta-banner-inner::after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -40px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.buy-cta-banner-text {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+.buy-cta-banner-eyebrow {
+  display: block;
+  margin: 0 0 10px;
+  color: var(--accent-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.buy-cta-banner-text h2 {
+  font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.buy-cta-banner-text p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.buy-cta-banner-actions {
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* REVIEWS MARQUEE──────────────────────────────────────────── */
 .reviews-section {
   padding: 80px 0;
   overflow: hidden;
@@ -2214,6 +2335,83 @@ select {
   flex-shrink: 0;
 }
 
+/* COMPATIBILITY / SYSTEM REQUIREMENTS TABLES */
+.compat-section .section-heading {
+  margin-bottom: 40px;
+}
+
+.compat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.compat-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 20px;
+  overflow: hidden;
+}
+
+.compat-panel-title {
+  margin: 0 0 18px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.compat-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.compat-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 320px;
+}
+
+.compat-table th,
+.compat-table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+  vertical-align: middle;
+}
+
+.compat-table th {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.compat-table td {
+  font-size: 0.88rem;
+  color: var(--text-main);
+}
+
+.compat-table tbody tr:last-child th,
+.compat-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.compat-status {
+  color: #4ade80;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .compat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* MOBILE MENUâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .mobile-nav {
   display: none;
@@ -2524,6 +2722,32 @@ select {
   }
 
   .support-cta-actions .btn {
+    width: 100%;
+    max-width: 360px;
+    white-space: normal;
+  }
+
+  .buy-cta-banner-inner {
+    flex-direction: column;
+    padding: 36px 24px;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .buy-cta-banner-inner::before {
+    display: none;
+  }
+
+  .buy-cta-banner-text {
+    max-width: none;
+  }
+
+  .buy-cta-banner-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .buy-cta-banner-actions .btn {
     width: 100%;
     max-width: 360px;
     white-space: normal;
